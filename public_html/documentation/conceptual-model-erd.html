@@ -13,7 +13,6 @@
 <ul>
     <li>PK:scholarshipId</li>
     <li>scholarshipAmount</li>
-    <li>scholarshipCategory</li>
     <li>scholarshipCriteria</li>
     <li>scholarshipDeadline</li>
     <li>scholarshipDescription</li>
@@ -23,48 +22,30 @@
 <h2>user</h2>
 <ul>
     <li>PK: userId</li>
+    <li>userActivationToken</li>
     <li>userEmail</li>
+    <li>userHash</li>
     <li>userName</li>
-</ul>
-
-<h2>level</h2>
-<ul>
-    <li>PK: levelId</li>
-    <li>levelGraduate</li>
-    <li>levelHighSchool</li>
-    <li>levelUndergraduate</li>
 </ul>
 
 <h2>Category</h2>
 <ul>
     <li>PK: categoryId</li>
-    <li>categoryAfricanAmerican</li>
-    <li>categoryAsianAmerican</li>
-    <li>categoryHispanic</li>
-    <li>categoryNative</li>
-    <li>categoryVeteran</li>
-    <li>categoryWomen</li>
+    <li>categoryName</li>
 </ul>
 
 <h2>scholarshipCategory</h2>
 <ul>
-    <li>PK: scholarshipCategoryId</li>
-    <li>FK: categoryId</li>
-    <li>FK: scholarshipId</li>
-</ul>
+    <li>FK: scholarshipCategoryCategoryId</li>
+    <li>FK: scholarshipCategoryScholarshipId</li>
 
-<h2>scholarshipLevel</h2>
-<ul>
-    <li>PK: scholarshipLevelId</li>
-    <li>FK: levelId</li>
-    <li>FK: scholarshipId</li>
 </ul>
 
 <h2>like</h2>
 <ul>
-    <li>PK: userLikeId</li>
-    <li>FK: scholarshipId</li>
-    <li>FK: scholarshipId</li>
+    <li>FK: likeScholarshipId</li>
+    <li>FK: likeUserId</li>
+
 </ul>
 <src></src>
 <img src="CapstoneERD.png">

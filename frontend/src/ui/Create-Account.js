@@ -4,6 +4,7 @@ import {Form} from "react-bootstrap";
 export const CreateAccount = () => {
     return (
         <>
+        <h1>Is this thing on?</h1>
             <Form>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Email address</Form.Label>
@@ -14,7 +15,6 @@ export const CreateAccount = () => {
                     <Form.Control type="password" placeholder="Password" />
                 </Form.Group>
             </Form>
-
         </>
     )
 }

@@ -3,9 +3,11 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
+import {Navigation} from './Navbar'
 
 export const App = () => (
     <>
+        <Navigation/>
         <BrowserRouter>
             <Switch>
                 <Route exact path='/' component={Home} />

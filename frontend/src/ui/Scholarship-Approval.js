@@ -1,9 +1,20 @@
 import React from "react"
+import {Col, Container, FormControl, Row,} from "react-bootstrap";
+import {Form} from "formik";
 
 export const ScholarshipApproval = () => {
     return (
         <>
-            <h1>Test</h1>
+            <Form>
+                <Row>
+                    <Col>
+                        <FormControl placeholder="First name" />
+                    </Col>
+                    <Col>
+                        <FormControl placeholder="Last name" />
+                    </Col>
+                </Row>
+            </Form>
         </>
     )
 }

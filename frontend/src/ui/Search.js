@@ -9,7 +9,7 @@ export const Search = () => {
         <>
             <Container fluid>
                 <Row>
-                    <Col className="border border-dark border-2 text-center"><h1>Top Scholarships</h1></Col>
+                    <Col className="border border-dark border-2 text-center"><h1>Scholarships Search</h1></Col>
                 </Row>
 
             </Container>

@@ -7,8 +7,9 @@ import {Navigation} from './Navbar'
 
 export const App = () => (
     <>
-        <Navigation/>
+
         <BrowserRouter>
+            <Navigation/>
             <Switch>
                 <Route exact path='/' component={Home} />
                 <Route component={FourOhFour} />

@@ -4,10 +4,10 @@ import Logo from "../images/logoteam.png"
 export const Header = () => {
     return (
         <>
-            <Container>
+
             <Row>
                 <Col xs={6} md={4}>
-                    <Image src={Logo} alt="team-logo"/>
+                    <Image width={150} height={150} src={Logo} alt="team-logo"/>
                 </Col>
                 <Col md={6}>
                     <h1>Scholarships for New Mexico Students</h1>
@@ -30,7 +30,7 @@ export const Header = () => {
                     </NavDropdown>
                 </Col>
             </Row>
-            </Container>
+
         </>
     )
 }

@@ -1,4 +1,4 @@
-import {Card, Col, Container, Row} from "react-bootstrap";
+import {Badge, Button, Card, Col, Container, Row} from "react-bootstrap";
 import React from "react";
 import {Star} from "react-bootstrap-icons";
 
@@ -23,6 +23,12 @@ export const PostCard = () => {
                                     ......
                                 </Card.Text>
                             </Card.Body>
+                        </Col>
+                        <Col>
+                            <Button variant="info" style={{marginLeft: "auto", display:"block"}}>
+                                #likes <Badge bg="secondary">9</Badge>
+                                <span className="visually-hidden"></span>
+                            </Button>
                         </Col>
 
 

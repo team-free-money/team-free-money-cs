@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
-import {UserLogin} from "./Login";
 import {Navigation} from './Navbar'
 import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
@@ -18,9 +17,9 @@ export const App = () => (
     <>
 
         <BrowserRouter>
+            <Header/>
             <Navigation/>
             <Switch>
-                <Route exact path='/header' component={Header} />
                 <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />

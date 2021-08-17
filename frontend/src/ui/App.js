@@ -22,7 +22,7 @@ export const App = () => (
             <Header/>
             <Navigation/>
             <Switch>
-                <Route exact path='/home' component={Home} />
+                <Route exact path='/' component={Home} />
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
@@ -34,6 +34,5 @@ export const App = () => (
             </Switch>
             <Footer/>
         </BrowserRouter>
-
     </>
 )

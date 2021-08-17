@@ -6,7 +6,7 @@ export const Header = () => {
         <>
 
             <Row>
-                <Col xs={6} md={4}>
+                <Col>
                     <Image width={150} height={150} src={Logo} alt="team-logo"/>
                 </Col>
                 <Col md={6}>
@@ -21,7 +21,7 @@ export const Header = () => {
                             aria-label="Search"
                         />
                     </Form>
-                    <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+                    <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
                         <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>

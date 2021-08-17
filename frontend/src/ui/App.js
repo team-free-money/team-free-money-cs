@@ -11,6 +11,8 @@ import  {UserHome} from "./UserHome";
 import "./syle.css"
 import {CreateAccount} from "./Create-Account";
 import {UserLogin} from "./UserLogin";
+import {Footer} from "./Footer";
+
 
 
 export const App = () => (
@@ -20,7 +22,7 @@ export const App = () => (
             <Header/>
             <Navigation/>
             <Switch>
-                <Route exact path='/' component={Home} />
+                <Route exact path='/home' component={Home} />
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
@@ -30,6 +32,7 @@ export const App = () => (
                 <Route exact path='/create' component={CreateAccount} />
                 <Route exact path='/fourohfour' component={FourOhFour} />
             </Switch>
+            <Footer/>
         </BrowserRouter>
 
     </>

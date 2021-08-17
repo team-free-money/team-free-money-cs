@@ -6,7 +6,7 @@ export function Navigation () {
 
     return (
         <>
-            <Container>
+            <Container fluid>
             <Navbar bg="light" expand="lg">
                 <Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

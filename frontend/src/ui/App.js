@@ -5,6 +5,7 @@ import { FourOhFour } from './FourOhFour'
 import React from 'react'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {Navigation} from './Navbar'
 =======
 import {ScholarshipSubmission} from "./Scholarship-Submission";
@@ -12,6 +13,10 @@ import {ScholarshipSubmission} from "./Scholarship-Submission";
 =======
 import {ScholarshipApproval} from "./Scholarship-Approval";
 >>>>>>> scholarship-approval
+=======
+import {Header} from "./Header";
+
+>>>>>>> header
 
 export const App = () => (
     <>
@@ -19,6 +24,7 @@ export const App = () => (
         <BrowserRouter>
             <Navigation/>
             <Switch>
+                <Route exact path='/header' component={Header} />
                 <Route exact path='/' component={Home} />
 <<<<<<< HEAD
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />

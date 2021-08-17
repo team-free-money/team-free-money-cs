@@ -6,8 +6,6 @@ import "./syle.css"
 export const Home = () => {
     return (
         <>
-<<<<<<< HEAD
-
             <Container as={"section"} className='p-1'>
                 <Row className={"g-0"}>
                     <Col xs={10} md={6} className="d-block mx-auto bg-white p-5">
@@ -40,13 +38,6 @@ export const Home = () => {
 
                 </Row>
             </Container>
-
-
-=======
-            <h1>Home</h1>
-            <a href="/create">Create Account</a>
->>>>>>> create-account
-
         </>
     )
 }

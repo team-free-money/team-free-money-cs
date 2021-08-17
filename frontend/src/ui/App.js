@@ -5,6 +5,7 @@ import { FourOhFour } from './FourOhFour'
 import React from 'react'
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 import {UserLogin} from "./Login";
 =======
 <<<<<<< HEAD
@@ -30,6 +31,9 @@ import "./syle.css"
 =======
 import {CreateAccount} from "./Create-Account";
 >>>>>>> create-account
+=======
+import {UserLogin} from "./UserLogin";
+>>>>>>> user-sign-in
 
 export const App = () => (
     <>
@@ -39,6 +43,7 @@ export const App = () => (
             <Switch>
                 <Route exact path='/header' component={Header} />
                 <Route exact path='/' component={Home} />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                 <Route exact path='/login' component={UserLogin} />
@@ -53,6 +58,9 @@ export const App = () => (
 =======
                 <Route exact path='/userhome' component={UserHome} />
 >>>>>>> b75ecaded2a636763c18d27e6107bad2306c9b25
+=======
+                <Route exact path='/login' component={UserLogin} />
+>>>>>>> user-sign-in
                 <Route component={FourOhFour} />
 >>>>>>> home
 =======

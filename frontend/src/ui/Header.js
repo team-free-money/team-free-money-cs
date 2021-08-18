@@ -6,13 +6,13 @@ export const Header = () => {
         <>
 
             <Row>
-                <Col>
-                    <Image width={150} height={150} src={Logo} alt="team-logo"/>
+                <Col md={2}>
+                    <Image className="mt-3" width={150} height={150} src={Logo} alt="team-logo"/>
                 </Col>
-                <Col md={6}>
+                <Col md={8}>
                     <h1>Scholarships for New Mexico Students</h1>
                 </Col>
-                <Col>
+                <Col md={2}>
                     <Form className="d-flex">
                         <FormControl
                             type="search"

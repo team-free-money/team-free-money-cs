@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
+<<<<<<< HEAD
 import {Navigation} from './Navbar'
 import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
@@ -14,6 +15,9 @@ import {UserLogin} from "./UserLogin";
 import {Footer} from "./Footer";
 
 
+=======
+import {PostCard} from "./PostCard";
+>>>>>>> card-1
 
 export const App = () => (
     <>
@@ -22,7 +26,12 @@ export const App = () => (
             <Header/>
             <Navigation/>
             <Switch>
+<<<<<<< HEAD
                 <Route exact path='/' component={Home} />
+=======
+<<<<<<< HEAD
+                <Route exact path='/home' component={Home} />
+>>>>>>> 3f4bb0f748015bd53342f533b21217dba8e3ba51
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
@@ -31,6 +40,11 @@ export const App = () => (
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/create' component={CreateAccount} />
                 <Route exact path='/fourohfour' component={FourOhFour} />
+=======
+                <Route exact path='/PostCard' component={PostCard} />
+                <Route exact path='/' component={Home} />
+                <Route component={FourOhFour} />
+>>>>>>> card-1
             </Switch>
             <Footer/>
         </BrowserRouter>

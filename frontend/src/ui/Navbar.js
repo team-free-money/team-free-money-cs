@@ -20,8 +20,8 @@ export function Navigation () {
                 </Container>
                 <Nav className="">
                     <Navbar.Brand href="/">Home</Navbar.Brand>
-                    <Navbar.Brand href="/userlogin">Log In</Navbar.Brand>
-                    <Navbar.Brand href="/login">Sign Up</Navbar.Brand>
+                    <Navbar.Brand href="/login">Log In</Navbar.Brand>
+                    <Navbar.Brand href="/create-account">Sign Up</Navbar.Brand>
                 </Nav>
             </Navbar>
             </Container>

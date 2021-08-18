@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
+<<<<<<< HEAD
 import {Search} from './Search'
 import {Navigation} from './Navbar'
 import {ScholarshipSubmission} from "./Scholarship-Submission";
@@ -15,6 +16,9 @@ import {UserLogin} from "./UserLogin";
 import {Footer} from "./Footer";
 import {PostCard} from "./PostCard";
 
+=======
+import {TopScholarship} from './Top-Scholarship'
+>>>>>>> Top-Scholarship
 
 export const App = () => (
     <>
@@ -28,6 +32,7 @@ export const App = () => (
 
 
                 <Route exact path='/' component={Home} />
+<<<<<<< HEAD
 
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/login' component={UserLogin} />
@@ -45,8 +50,13 @@ export const App = () => (
 
                 <Route component={FourOhFour} />
 
+=======
+                <Route exact path='/topscholarship' component={TopScholarship} />
+                <Route exact path='/fourohfour' component={FourOhFour} />
+>>>>>>> Top-Scholarship
             </Switch>
             <Footer/>
         </BrowserRouter>
     </>
+
 )

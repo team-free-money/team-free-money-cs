@@ -3,6 +3,9 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
+import {Search} from './Search'
+
+
 
 import {Navigation} from './Navbar'
 import {ScholarshipSubmission} from "./Scholarship-Submission";
@@ -45,6 +48,9 @@ export const App = () => (
                 <Route exact path='/fourohfour' component={FourOhFour} />
                 <Route exact path='/PostCard' component={PostCard} />
                 <Route exact path='/' component={Home} />
+                <Route exact path='/search' component={Search} />
+                <Route exact path='/fourohfour' component={FourOhFour} />
+
                 <Route component={FourOhFour} />
 
             </Switch>

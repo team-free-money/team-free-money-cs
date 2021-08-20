@@ -11,11 +11,8 @@ export const Home = () => {
                     <Col xs={10} md={6} className="d-block mx-auto bg-white p-5">
                         <Image src={IMG2} fluid className="mx-2 d-block" alt="Mission"/>
                         <p>
-                            Travel time to the nearest starbase? I think you've let your personal feelings cloud your
-                            judgement. When has justice ever been as simple as a rule book? About four years. I got tired of
-                            hearing how young I looked. We could cause a diplomatic crisis. Take the ship into the Neutral Zone
-                            Why don't we just give everybody a promotion and call it a night - 'Commander'? And blowing into
-                            maximum warp speed, you appeared for an instant to be in two places at once. Shields up! Rrrrred
+                            To provide a starting point encouraging first steps for people in the community to seek out access for education,
+                            opening opportunities for improved quality of life.
                         </p>
                     </Col>
 

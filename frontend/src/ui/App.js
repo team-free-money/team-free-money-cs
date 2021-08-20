@@ -28,16 +28,12 @@ export const App = () => (
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
-                <Route exact path='/fourohfour' component={FourOhFour} />
                 <Route exact path='/userhome' component={UserHome} />
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/create-account' component={CreateAccount} />
-                <Route exact path='/fourohfour' component={FourOhFour} />
                 <Route exact path='/PostCard' component={PostCard} />
                 <Route exact path='/' component={Home} />
                 <Route exact path='/search' component={Search} />
-                <Route exact path='/fourohfour' component={FourOhFour} />
-                <Route component={FourOhFour} />
                 <Route exact path='/topscholarship' component={TopScholarship} />
                 <Route exact path='/fourohfour' component={FourOhFour} />
             </Switch>

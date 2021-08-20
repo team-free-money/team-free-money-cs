@@ -8,21 +8,18 @@ export function Navigation () {
         <>
             <Container>
             <Navbar bg="light" expand="lg" className="border border-dark rounded">
-                <Container>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="">
-                            <Nav.Link href="/search">Native American</Nav.Link>
-                            <Nav.Link href="/search">Hispanic</Nav.Link>
-                            <Nav.Link href="/search">New Student</Nav.Link>
+                        <Nav className="mx-auto">
+                            <Navbar.Brand className="p-2" href="/">Home</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">General</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">Native American</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">Veteran</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">Women</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">Hispanic</Navbar.Brand>
+                            <Navbar.Brand className="p-2" href="/search">Freshman</Navbar.Brand>
                         </Nav>
                     </Navbar.Collapse>
-                </Container>
-                <Nav className="">
-                    <Navbar.Brand href="/">Home</Navbar.Brand>
-                    <Navbar.Brand href="/login">Log In</Navbar.Brand>
-                    <Navbar.Brand href="/create-account">Sign Up</Navbar.Brand>
-                </Nav>
             </Navbar>
             </Container>
         </>

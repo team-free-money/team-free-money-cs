@@ -1,3 +1,19 @@
-#root {
-    background-color: #AFB9C8;
+@import url('https://fonts.googleapis.com/css?family=Audiowide');
+
+body {
+    min-height: 100vh;
+    padding: 0 0.5rem;
+    position: relative;
+}
+body::before
+{
+    content: '';
+    background: url("baim-hanif-pYWuOMhtc6k-unsplash (1).jpg") center center/cover no-repeat;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
 }

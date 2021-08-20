@@ -2,7 +2,7 @@ import React from "react"
 import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import IMG1 from "./about-us.png"
 import IMG2 from "./mission.png"
-import "./syle.css"
+import "./style.css"
 export const Home = () => {
     return (
         <>

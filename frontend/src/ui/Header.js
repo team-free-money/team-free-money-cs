@@ -1,10 +1,7 @@
 import React from "react"
-<<<<<<< HEAD
-import {Col, Container, Form, FormControl, Image, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
-=======
 import {Col, Form, FormControl, Image, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
->>>>>>> 8b61ee770a9a8a6d064450005b3c768e8fce11fb
 import Logo from "../images/logoteam.png"
+
 export const Header = () => {
     return (
         <>

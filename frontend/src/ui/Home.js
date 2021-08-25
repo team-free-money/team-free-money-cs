@@ -6,35 +6,42 @@ import "./syle.css"
 export const Home = () => {
     return (
         <>
-            <Container as={"section"} className='p-1'>
-                <Row className={"g-0"}>
-                    <Col xs={10} md={6} className="d-block mx-auto bg-white p-5">
-                        <Image src={IMG2} fluid className="mx-2 d-block" alt="Mission"/>
-                        <p>
-                            To provide a starting point encouraging first steps for people in the community to seek out access for education,
-                            opening opportunities for improved quality of life.
-                        </p>
-                    </Col>
+            <main className="my-5 text-white p-0">
+                <div className="container-fluid text-center text-md-left">
+                    <div className="row">
 
-                </Row>
+                        <div className="col-md-8 text-center">
+                            <h1>About Us</h1>
+                            <Container className="bg-transparent text-shadow-dark">
+                                <h4 className="text-center">We are Full Stack Web Developer Intern from Deep Dive Coding.</h4>
+                                    <Image height={200} width={200} src={IMG1} fluid className="mx-auto d-block mb-5" alt="About Us"/>
+
+                            </Container>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <Container as="section">
+                <main className="my-5 text-white p-0">
+                    <div className="container-fluid text-center text-md-left">
+                        <div className="row">
+                            <div className="col-md-4">
+                            </div>
+
+                                <div className="col-md-8 text-center">
+                                    <Container className="bg-transparent text-shadow-dark">
+                                        <Image height={275} width={275} src={IMG2} fluid className="mx-auto d-block mb-5" alt="About Us"/>
+
+                                        <h4 className="text-center">To provide a starting point encouraging first steps for people in the community to seek out access for education,
+                                            opening opportunities for improved quality of life.</h4>
+                                    </Container>
+                            </div>
+                        </div>
+                    </div>
+                </main>
             </Container>
-            <Container as={"section"} className='mt-3 mb-4 p-2'>
 
-                <Row className={"g-5"}>
-                    <Col xs={10} md={6} className="d-block mx-auto bg-white p-5">
-                        <Image height={275} width={275} src={IMG1} fluid className="mx-auto d-block mb-5" alt="About Us"/>
-                        <h2 className="text-center">About Us</h2>
-                        <p>
-                            Travel time to the nearest starbase? I think you've let your personal feelings cloud your
-                            judgement. When has justice ever been as simple as a rule book? About four years. I got tired of
-                            hearing how young I looked. We could cause a diplomatic crisis. Take the ship into the Neutral Zone
-                            Why don't we just give everybody a promotion and call it a night - 'Commander'? And blowing into
-                            maximum warp speed, you appeared for an instant to be in two places at once. Shields up! Rrrrred
-                        </p>
-                    </Col>
-
-                </Row>
-            </Container>
         </>
     )
 }

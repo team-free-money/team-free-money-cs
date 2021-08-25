@@ -25,10 +25,9 @@ export const App = () => (
             <Navigation/>
             <Switch>
                 <Route exact path='/' component={Home} />
-<<<<<<< HEAD
+
                 <Route exact path='/home' component={Home} />
-=======
->>>>>>> 9b4e9ec443d4765f6d648eb8b357444b6e58a894
+
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
@@ -38,11 +37,9 @@ export const App = () => (
                 <Route exact path='/PostCard' component={PostCard} />
                 <Route exact path='/' component={Home} />
                 <Route exact path='/search' component={Search} />
-<<<<<<< HEAD
+
                 <Route exact path='/fourohfour' component={FourOhFour} />
                 <Route component={FourOhFour} />
-=======
->>>>>>> 9b4e9ec443d4765f6d648eb8b357444b6e58a894
                 <Route exact path='/topscholarship' component={TopScholarship} />
                 <Route exact path='/fourohfour' component={FourOhFour} />
             </Switch>

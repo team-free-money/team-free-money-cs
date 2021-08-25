@@ -44,7 +44,7 @@ export function Navigation () {
                                 Sign up
                             </Nav.Link>
                         </Nav>
-                </Container>c
+                </Container>
 
             </Navbar>
         </>

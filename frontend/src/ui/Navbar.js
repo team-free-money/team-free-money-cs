@@ -1,6 +1,9 @@
 import React from "react"
+
 import {Button, Container, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import logo from "../images/logoteam.png"
+
+import {Container, Nav, Navbar} from "react-bootstrap";
 
 export function Navigation () {
 

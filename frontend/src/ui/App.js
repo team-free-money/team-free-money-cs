@@ -9,7 +9,7 @@ import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
 import {Header} from "./Header";
 import  {UserHome} from "./UserHome";
-import "./syle.css"
+import "./style.css"
 import {CreateAccount} from "./Create-Account";
 import {UserLogin} from "./UserLogin";
 import {Footer} from "./Footer";

@@ -1,15 +1,16 @@
 import React from "react"
-import {Button, Col, Container, Form, FormControl, Image, NavDropdown, Row} from "react-bootstrap";
+import {Col, Form, FormControl, Image, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
 import Logo from "../images/logoteam.png"
+
 export const Header = () => {
     return (
         <>
 
             <Row>
-                <Col md={2}>
-                    <Image className="mt-3" width={150} height={150} src={Logo} alt="team-logo"/>
+                <Col md={3}>
+                    <Image className="m-3 rounded-circle" width={150} height={150} src={Logo} alt="team-logo"/>
                 </Col>
-                <Col md={8}>
+                <Col md={6}>
                     <h1>Scholarships for New Mexico Students</h1>
                 </Col>
                 <Col md={2}>
@@ -21,13 +22,10 @@ export const Header = () => {
                             aria-label="Search"
                         />
                     </Form>
-                    <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                    </NavDropdown>
+                    <Nav className="">
+                        <Navbar.Brand href="/login">Log In</Navbar.Brand>
+                        <Navbar.Brand href="/create-account">Sign Up</Navbar.Brand>
+                    </Nav>
                 </Col>
             </Row>
 

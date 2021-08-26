@@ -21,10 +21,13 @@ export const App = () => (
     <>
 
         <BrowserRouter>
-            <Header/>
+
             <Navigation/>
             <Switch>
                 <Route exact path='/' component={Home} />
+
+                <Route exact path='/home' component={Home} />
+
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/scholarshipsubmission' component={ScholarshipSubmission} />
                 <Route exact path='/scholarshipapproval' component={ScholarshipApproval} />
@@ -34,6 +37,9 @@ export const App = () => (
                 <Route exact path='/PostCard' component={PostCard} />
                 <Route exact path='/' component={Home} />
                 <Route exact path='/search' component={Search} />
+
+                <Route exact path='/fourohfour' component={FourOhFour} />
+                <Route component={FourOhFour} />
                 <Route exact path='/topscholarship' component={TopScholarship} />
                 <Route exact path='/fourohfour' component={FourOhFour} />
             </Switch>

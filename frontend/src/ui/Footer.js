@@ -3,7 +3,9 @@ import React from "react";
 export const Footer = () => {
     return (
         <>
-            <footer className="bg-dark text-center p-5" >Hello</footer>
+            <footer className=" text-center p-3 text-white" >© Scholarship Finder</footer>
+
         </>
     )
 }
+

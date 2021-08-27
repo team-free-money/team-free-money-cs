@@ -1,7 +1,6 @@
 import React from "react"
-import {Card, Col, Container, Row} from "react-bootstrap";
-import {Star} from "react-bootstrap-icons";
-import {height, width} from "@fortawesome/free-solid-svg-icons/faAd";
+import {Col, Container, Row} from "react-bootstrap";
+
 
 
 export const TopScholarship = () => {

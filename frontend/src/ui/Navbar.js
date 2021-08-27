@@ -14,10 +14,17 @@ export function Navigation () {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
+<<<<<<< HEAD
                             <Nav.Link href="#About">About Us</Nav.Link>
                             <Nav.Link href="#Mission">Our Mission</Nav.Link>
                             <NavDropdown title="Scholarship" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#search">General</NavDropdown.Item>
+=======
+                            <Nav.Link href="#">Our Mission</Nav.Link>
+                            <Nav.Link href="#">About Us</Nav.Link>
+                            <NavDropdown title="Scholarship" id="collasible-nav-dropdown">
+                                <NavDropdown.Item href="#">General</NavDropdown.Item>
+>>>>>>> develop
                                 <NavDropdown.Item href="#">Veteran</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Native American</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Women</NavDropdown.Item>
@@ -27,6 +34,7 @@ export function Navigation () {
                     </Navbar.Collapse>
                 </Container>
                 <Container className="justify-content-end">
+<<<<<<< HEAD
                     <Nav>
                         <Form className="d-flex">
                             <FormControl
@@ -42,6 +50,23 @@ export function Navigation () {
                             Sign up
                         </Nav.Link>
                     </Nav>
+=======
+                        <Nav>
+                            <Form className="d-flex">
+                                <FormControl
+                                    type="search"
+                                    placeholder="Search..."
+                                    className="mr-2"
+                                    aria-label="Search"
+                                />
+                                <Button variant="outline-success">Search</Button>
+                            </Form>
+                            <Nav.Link href="#deets">Log In</Nav.Link>
+                            <Nav.Link href="#memes">
+                                Sign up
+                            </Nav.Link>
+                        </Nav>
+>>>>>>> develop
                 </Container>
 
             </Navbar>

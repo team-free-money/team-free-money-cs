@@ -21,7 +21,6 @@ export const App = () => (
     <>
 
         <BrowserRouter>
-            <Header/>
             <Navigation/>
             <Switch>
                 <Route exact path='/' component={Home} />

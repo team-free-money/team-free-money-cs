@@ -23,7 +23,7 @@ export function Navigation () {
                                 <NavDropdown.Item href="#">Veteran</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Native American</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Women</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Freshman</NavDropdown.Item>
+                                <NavDropdown.Item href="#">Hispanic</NavDropdown.Item>
                             </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>

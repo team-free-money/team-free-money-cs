@@ -5,7 +5,6 @@ import Logo from "../images/logoteam.png"
 export const Header = () => {
     return (
         <>
-
             <Row>
                 <Col md={3}>
                     <Image className="m-3 rounded-circle" width={150} height={150} src={Logo} alt="team-logo"/>
@@ -19,8 +18,7 @@ export const Header = () => {
                             type="search"
                             placeholder="Search..."
                             className="mr-2"
-                            aria-label="Search"
-                        />
+                            aria-label="Search"/>
                     </Form>
                     <Nav className="">
                         <Navbar.Brand href="/login">Log In</Navbar.Brand>

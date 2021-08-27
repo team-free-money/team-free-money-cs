@@ -24,7 +24,7 @@ export const Home = () => {
             </Container>
                         <Container as={"section"} className='p-1' id="Mission">
                             <Row className={"g-0"}>
-                                <Col xs={10} md={6} className="d-block mx-auto bg-white p-5">
+                                <Col xs={10} md={6} className="d-block mx-auto bg-white p-5 bg-transparent">
                                     <Image height={500} width={500} src={IMG2} fluid className="mx-2 d-block" alt="Mission"/>
                                 </Col>
                                 <Col className="my-auto fst-italic font-italic">

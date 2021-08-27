@@ -17,10 +17,6 @@ export function Navigation () {
                             <Nav.Link href="#About">About Us</Nav.Link>
                             <Nav.Link href="#Mission">Our Mission</Nav.Link>
                             <NavDropdown title="Scholarship" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#search">General</NavDropdown.Item>
-                            <Nav.Link href="#">Our Mission</Nav.Link>
-                            <Nav.Link href="#">About Us</Nav.Link>
-                            <NavDropdown title="Scholarship" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#">General</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Veteran</NavDropdown.Item>
                                 <NavDropdown.Item href="#">Native American</NavDropdown.Item>
@@ -46,21 +42,6 @@ export function Navigation () {
                             Sign up
                         </Nav.Link>
                     </Nav>
-                        <Nav>
-                            <Form className="d-flex">
-                                <FormControl
-                                    type="search"
-                                    placeholder="Search..."
-                                    className="mr-2"
-                                    aria-label="Search"
-                                />
-                                <Button variant="outline-success">Search</Button>
-                            </Form>
-                            <Nav.Link href="#deets">Log In</Nav.Link>
-                            <Nav.Link href="#memes">
-                                Sign up
-                            </Nav.Link>
-                        </Nav>
                 </Container>
 
             </Navbar>

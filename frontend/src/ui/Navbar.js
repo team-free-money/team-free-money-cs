@@ -2,16 +2,13 @@ import React from "react"
 
 import {Button, Container, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import logo from "../images/logoteam.png"
-
-import {Container, Nav, Navbar} from "react-bootstrap";
-
 export function Navigation () {
 
     return (
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark">
                 <Container>
-                    <img src={logo} className="m-3 rounded-circle" alt=""/>
+                    <img src={logo} className="m-3 rounded-circle text-dark" alt=""/>
                     <Navbar.Brand href="#home">Home</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

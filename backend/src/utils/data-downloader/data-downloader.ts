@@ -1,4 +1,5 @@
 import {v1 as uuid} from 'uuid';
+import {Scholarship} from "../interfaces/Scholarship";
 
 const fs = require('fs')
 const csv = require('csv-parser')

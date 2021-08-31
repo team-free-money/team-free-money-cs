@@ -6,5 +6,4 @@ export interface Scholarship {
     scholarshipDescription: string,
     scholarshipLink: string,
     scholarshipName: string,
-    scholarshipCategoryName: string,
 }

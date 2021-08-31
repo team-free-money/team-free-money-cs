@@ -2,7 +2,6 @@ import {v1 as uuid} from 'uuid';
 import {Scholarship} from "../interfaces/Scholarship";
 import {Category} from "../interfaces/Category";
 import {ScholarshipCategory} from "../interfaces/ScholarshipCategory";
-
 const fs = require('fs')
 const csv = require('csv-parser')
 

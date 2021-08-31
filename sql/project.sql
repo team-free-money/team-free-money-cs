@@ -4,6 +4,7 @@ drop table if exists category;
 drop table if exists `user`;
 drop table if exists scholarship;
 
+
 create table scholarship(
                         scholarshipId binary(16) not null primary key,
                         scholarshipApproved boolean,

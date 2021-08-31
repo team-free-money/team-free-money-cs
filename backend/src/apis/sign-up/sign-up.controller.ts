@@ -35,7 +35,6 @@ export async function signupUserController(request: Request, response: Response)
         const user: User = {
             userId: null,
             userActivationToken,
-            userAdmin,
             userEmail,
             userHash,
             userName

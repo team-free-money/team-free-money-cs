@@ -1,7 +1,6 @@
 import {NextFunction, Request, Response} from "express";
 import {selectUserByUserActivationToken} from "../../utils/user/selectUserByUserActivationToken";
 import {User} from "../../utils/interfaces/User";
-import {updateUser} from "../../utils/interfaces/User";
 import {Status} from '../../utils/interfaces/Status';
 
 export async function activationController(request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {

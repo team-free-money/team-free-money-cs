@@ -7,14 +7,12 @@ drop table if exists scholarship;
 
 create table scholarship(
                         scholarshipId binary(16) not null primary key,
-                        scholarshipApproved boolean,
                         scholarshipAmount varchar(8) null,
                         scholarshipCriteria varchar(2000) null,
                         scholarshipDeadline DATETIME(6) null,
                         scholarshipDescription varchar(2000) null,
                         scholarshipLink varchar(128) null,
                         scholarshipName varchar(128) null,
-                        scholarshipCategoryName varchar(100) not null,
                         index(scholarshipId)
 );
 

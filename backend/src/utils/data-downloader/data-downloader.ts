@@ -2,6 +2,9 @@ import {v1 as uuid} from 'uuid';
 import {Scholarship} from "../interfaces/Scholarship";
 import {Category} from "../interfaces/Category";
 import {ScholarshipCategory} from "../interfaces/ScholarshipCategory";
+import {insertCategory} from "../category/insertCategory";
+import {insertScholarshipCategory} from "../scholarshipCategory/insertScholarshipCat";
+import {insertScholarship} from "../scholarship/insertScholarship";
 const fs = require('fs')
 const csv = require('csv-parser')
 
@@ -28,8 +31,8 @@ function scholarshipDataDownloader(): Promise<any>{
             ]
             for (let category of categories) {
 
-            // const replyCategory = await insertCategory (category)
-            // console.log(replyCategory)
+            const replyCategory = await insertCategory (category)
+            console.log(replyCategory)
 
             }
             const results: any = [];
@@ -52,11 +55,9 @@ function scholarshipDataDownloader(): Promise<any>{
                                 scholarshipName: scholarshipName
 
                             }
-                            // console.log(scholarship)
-                            console.log(scholarshipCategoryName)
-                            // const reply = await insertScholarship(scholarship)
-                            // console.log(reply)
-                            // console.log(scholarship.scholarshipId)
+
+                            const reply = await insertScholarship(scholarship)
+                            console.log(reply)
                             const arrayOfCategoryNames:[] = scholarshipCategoryName.split(' ')
                             for (let categoryName of arrayOfCategoryNames){
                                 console.log(categoryName)
@@ -66,9 +67,8 @@ function scholarshipDataDownloader(): Promise<any>{
                                             scholarshipCategoryCategoryId : category.categoryId,
                                             scholarshipCategoryScholarshipId : scholarship.scholarshipId
                                         }
-                                        // const replyCategoryName = await insertScholarshipCategory(scholarshipCategory)
-                                        // console.log(replyCategoryName)
-                                        console.log(scholarshipCategory)
+                                        const replyCategoryName = await insertScholarshipCategory(scholarshipCategory)
+                                        console.log(replyCategoryName)
                                     }
                                 }
 

@@ -2,10 +2,9 @@ import {NextFunction, Request, Response} from "express";
 import "express-session";
 import passport from "passport";
 import passportLocal, {Strategy} from 'passport-local';
-
-import uuid from "uuid";
 import {generateJwt, validatePassword} from "../../utils/auth.utils";
 import {User} from "../../utils/interfaces/User";
+import uuid from "uuid";
 import {selectUserByUserEmail} from "../../utils/user/selectUserByUserEmail";
 
 export async function signInController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response|undefined> {
@@ -19,12 +18,11 @@ export async function signInController(request: Request, response: Response, nex
             {session: false},
             async (err: any, passportUser: User) => {
                 console.log(passportUser)
-                const {userId, userActivationToken, userAdmin, userEmail, userHash, userName} = passportUser;
+                const {userId, userActivationToken, userEmail, userHash, userName} = passportUser;
                 const signature: string = uuid();
                 const authorization: string = generateJwt({
                     userId,
                     userActivationToken,
-                    userAdmin,
                     userEmail,
                     userHash,
                     userName

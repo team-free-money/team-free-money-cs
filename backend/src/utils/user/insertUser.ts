@@ -4,7 +4,7 @@ import {User} from "../interfaces/User";
 export async function insertUser(user: User) : Promise<string>{
     try {
         const mysqlConnection = await connect();
-        const query : string = 'INSERT INTO user( userId, userActivationToken, userAdmin, userEmail, userHash, userName) VALUES (UUID_TO_BIN(UUID()), :userActivationToken, :userAdmin, :userEmail, :userHash, :userName)';
+        const query : string = 'INSERT INTO `user`( userId, userActivationToken, userAdmin, userEmail, userHash, userName) VALUES (UUID_TO_BIN(UUID()), :userActivationToken, :userAdmin, :userEmail, :userHash, :userName)';
         await mysqlConnection.execute(query, user);
         return 'Profile Successfully Created'
     } catch (error) {

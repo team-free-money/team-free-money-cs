@@ -41,7 +41,6 @@ function scholarshipDataDownloader(): Promise<any>{
                 .on('data', (data: any) => results.push(data))
                 .on('end', async () => {
                     try {
-                        console.log(results)
                         for (let result of results) {
                             const {scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName, scholarshipCategoryName
                             } = result
@@ -60,7 +59,6 @@ function scholarshipDataDownloader(): Promise<any>{
                             console.log(reply)
                             const arrayOfCategoryNames:[] = scholarshipCategoryName.split(' ')
                             for (let categoryName of arrayOfCategoryNames){
-                                console.log(categoryName)
                                 for (let category of categories){
                                     if (category.categoryName === categoryName){
                                         const scholarshipCategory : ScholarshipCategory = {

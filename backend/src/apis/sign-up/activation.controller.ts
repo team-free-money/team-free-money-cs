@@ -1,9 +1,10 @@
 import {NextFunction, Request, Response} from "express";
 import {selectUserByUserActivationToken} from "../../utils/user/selectUserByUserActivationToken";
 import {User} from "../../utils/interfaces/User";
-import {Status} from '../../utils/interfaces/Status';
+import {updateUser} from "../../utils/user/updateUser";
 
-export async function activationController(request: Request, response: Response, nextFunction: NextFunction): Promise<Response<Status>> {
+
+export async function activationController(request: Request, response: Response, nextFunction: NextFunction) {
     const {activation} = request.params
     try {
 
@@ -17,7 +18,7 @@ export async function activationController(request: Request, response: Response,
 
         const activationSucceeded = async (user: User):Promise<Response> => {
 
-            const updateUser = {...user, userActivationToken: null}
+            const updatedUser = {...user, userActivationToken: null}
             await updateUser(updatedUser)
             return response.json({
                 status: 200,

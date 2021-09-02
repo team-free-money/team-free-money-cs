@@ -1,6 +1,6 @@
 import {Schema} from 'express-validator';
 
-export const signupValidator: Schema= {
+export const signUpValidator: Schema= {
     userEmail: {
         isEmail: {
             errorMessage: 'Please provide a valid email'

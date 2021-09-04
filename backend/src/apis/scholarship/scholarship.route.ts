@@ -5,5 +5,5 @@ import {getAllScholarshipsController} from "./scholarship.controller";
 // import {check} from "express-validator";
 // import {checkSchema} from "express-validator";
 
-const router = Router();
-router.route("/").get(getAllScholarshipsController)
+export const scholarshipRoute = Router();
+scholarshipRoute.route("/").get(getAllScholarshipsController)

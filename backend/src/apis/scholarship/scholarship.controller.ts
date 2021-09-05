@@ -20,6 +20,5 @@ export async function getAllScholarshipsController(request: Request, response: R
             data: []
         })
     }
-
 }
 

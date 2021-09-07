@@ -5,7 +5,7 @@ import {RowDataPacket} from 'mysql2';
 export async function selectScholarshipByCategoryNameHispanic(categoryName: string) : Promise<Scholarship[]> {
     try {
         const mySqlConnection = await connect();
-        const mySqlQuery = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName FROM category INNER JOIN scholarshipCategory ON scholarshipCategory.scholarshipCategoryCategoryId = categoryID INNER JOIN scholarship ON scholarshipCategory.scholarshipCategoryScholarshipId = scholarship.scholarshipId WHERE categoryName = 'Hispanic'";
+        const mySqlQuery = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName FROM scholarship INNER JOIN scholarshipCategory ON scholarship.scholarshipId = scholarshipCategory.scholarshipCategoryScholarshipId INNER JOIN category ON scholarshipCategory.scholarshipCategoryCategoryId = category.categoryId WHERE categoryName = 'Hispanic'";
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {categoryName})
         return result[0] as Scholarship[]
     } catch (error) {

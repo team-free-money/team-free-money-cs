@@ -1,0 +1,2 @@
+SELECT BIN_TO_UUID(categoryId) AS categoryId, BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName FROM category INNER JOIN scholarshipCategory ON scholarshipCategory.scholarshipCategoryCategoryId = categoryID INNER JOIN scholarship ON scholarshipCategory.scholarshipCategoryScholarshipId = scholarship.scholarshipId WHERE categoryId = uuid_to_bin(categoryId) ORDER BY categoryID DESC;
+

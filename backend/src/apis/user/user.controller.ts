@@ -60,7 +60,7 @@ export async function getUserByUserIdController(request: Request, response: Resp
     }
 }
 
-// update user
+// Insert and Update user controller
 export async function putUserController(request: Request, response: Response) : Promise<Response>{
     try {
         const {userId} = request.params
@@ -79,7 +79,7 @@ const updateFailed = (message: string) : Response => {
 }
 
 return userId === userIdFromSession
-    ? preformUpdate({userId, userEmail, userName})
+    ? preformUpdate({userEmail, userName})
     : updateFailed("you are not allowed to preform this action")
 } catch (error) {
     return response.json( {status:400, data: null, message: error.message})

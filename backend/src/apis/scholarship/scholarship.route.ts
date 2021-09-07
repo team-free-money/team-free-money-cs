@@ -10,7 +10,7 @@ import {
     getScholarshipByScholarshipIdController,
     getScholarshipByScholarshipNameController
 } from "./scholarship.controller";
-import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
+import {asyncValidatorController} from "../../utils/controllers/asnycValidator.controller"
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 

@@ -7,10 +7,7 @@ import {User} from "../../utils/interfaces/User"
 // import {selectScholarshipByCategoryId} from "../../utils/scholarship/selectScholarshipByCategoryId";
 import {Status} from "../../utils/interfaces/Status";
 import {selectScholarshipByScholarshipId} from "../../utils/scholarship/selectScholarshipByScholarshipId";
-import {
-    selectScholarshipByCategoryNameGeneral,
-
-} from "../../utils/scholarship/selectScholarshipByCategoryName/selectScholarshipByCategoryNameGeneral";
+import {selectScholarshipByCategoryNameGeneral,} from "../../utils/scholarship/selectScholarshipByCategoryName/selectScholarshipByCategoryNameGeneral";
 import {selectScholarshipByCategoryNameHispanic} from "../../utils/scholarship/selectScholarshipByCategoryName/selectScholarshipByCategoryNameHispanic";
 import {selectScholarshipByCategoryNameNativeAmerican} from "../../utils/scholarship/selectScholarshipByCategoryName/selectScholarshipByCategoryNameNative-American";
 import {selectScholarshipByCategoryNameVeteran} from "../../utils/scholarship/selectScholarshipByCategoryName/selectScholarshipByCategoryNameVeteran";
@@ -175,18 +172,24 @@ export async function getScholarshipByCategoryNameNativeAmericanController(reque
 export async function postScholarship(request: Request, response: Response) : Promise<Response<Status>> {
     try {
 
-        const {scholarshipContent} = request.body;
-        const user : User = request.session.user as User
-        const userId : string = <string>user.userId
+        const {scholarshipAmount,
+            scholarshipCriteria,
+            scholarshipDeadline,
+            scholarshipDescription,
+            scholarshipLink,
+            scholarshipName} = request.body;
+        // const user : User = request.session.id as User
+        // @ts-ignore
+        const userId = <string>request.session?.user.userId;
 
         const scholarship: Scholarship = {
             scholarshipId: null,
-            scholarshipAmount: null,
-            scholarshipCriteria: null,
-            scholarshipDeadline: null,
-            scholarshipDescription: null,
-            scholarshipLink: null,
-            scholarshipName: null
+            scholarshipAmount,
+            scholarshipCriteria,
+            scholarshipDeadline,
+            scholarshipDescription,
+            scholarshipLink,
+            scholarshipName
         }
         const result = await insertScholarship(scholarship)
         const status: Status = {

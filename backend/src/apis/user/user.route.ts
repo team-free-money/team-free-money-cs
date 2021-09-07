@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {asyncValidatorController} from "../../utils/controllers/asyncValidator.controller";
+import {asyncValidatorController} from "../../utils/controllers/asnycValidator.controller";
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 import {getUserByUserEmailController, getUserByUserIdController} from "./user.controller";

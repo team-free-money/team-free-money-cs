@@ -4,28 +4,26 @@ import passport from "passport";
 import passportLocal, {Strategy} from 'passport-local';
 import {generateJwt, validatePassword} from "../../utils/auth.utils";
 import {User} from "../../utils/interfaces/User";
-import uuid from "uuid";
+import {v4 as uuidv4} from "uuid";
 import {selectUserByUserEmail} from "../../utils/user/selectUserByUserEmail";
 
 export async function signInController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response|undefined> {
 
     try {
 
-        const {userHash} = request.body;
+        const {userPassword} = request.body;
 
         passport.authenticate(
             'local',
             {session: false},
             async (err: any, passportUser: User) => {
                 console.log(passportUser)
-                const {userId, userActivationToken, userEmail, userHash, userName} = passportUser;
+                const {userId, userEmail, userName} = passportUser;
                 // @ts-ignore
-                const signature: string = uuid();
+                const signature: string = uuidv4();
                 const authorization: string = generateJwt({
                     userId,
-                    userActivationToken,
                     userEmail,
-                    userHash,
                     userName
                 }, signature);
 
@@ -53,12 +51,13 @@ export async function signInController(request: Request, response: Response, nex
                     return response.json({status: 200, data: null, message: "sign in successful"})
                 };
 
-                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.userHash, userHash);
+                const isPasswordValid: boolean = passportUser && await validatePassword(passportUser.userHash, userPassword);
 
                 return isPasswordValid ? signInSuccessful() : signInFailed("Invalid email or password");
             })(request, response, nextFunction)
     } catch (error) {
-    return response.json({status: 500, data: null, message: error.message})
+    // @ts-ignore
+        return response.json({status: 500, data: null, message: error.message})
         }
     }
 
@@ -67,7 +66,7 @@ export async function signInController(request: Request, response: Response, nex
     export const passportStrategy: Strategy = new LocalStrategy(
         {
             usernameField: 'userEmail',
-            passwordField: "userHash"
+            passwordField: "userPassword"
         },
         async (email, password, done) => {
             try{

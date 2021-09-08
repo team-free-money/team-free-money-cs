@@ -32,6 +32,7 @@ export async function activationController(request: Request, response: Response,
         return response.json({
             status: 500,
             data: null,
+            // @ts-ignore
             message: error.message
         })
     }

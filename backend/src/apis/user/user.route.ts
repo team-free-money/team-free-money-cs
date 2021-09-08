@@ -3,9 +3,13 @@ import {asyncValidatorController} from "../../utils/controllers/asnycValidator.c
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
 import {getUserByUserEmailController, getUserByUserIdController} from "./user.controller";
+import {getAllScholarshipsController} from "../scholarship/scholarship.controller";
+import {scholarshipRoute} from "../scholarship/scholarship.route";
 
 
 export const userRoute = Router();
+
+// userRoute.route("/").get(getAllUsersController)
 
 userRoute.route("/userId/").get(  asyncValidatorController([
     check("userId", "please provide a valid userId").isUUID()

@@ -14,8 +14,8 @@ export async function signupUserController(request: Request, response: Response)
     try {
 
 
-        const {userEmail, userHash, userName} = request.body;
-        const profileHash = await setHash(userHash);
+        const {userEmail, userPassword, userName} = request.body;
+        const userHash = await setHash(userPassword);
         const userActivationToken = setActivationToken();
         const basePath = `${request.protocol}://${request.get('host')}${request.originalUrl}activation/${userActivationToken}`
         console.log(userActivationToken)
@@ -68,6 +68,7 @@ export async function signupUserController(request: Request, response: Response)
     } catch (error) {
         const status: Status = {
             status: 500,
+            // @ts-ignore
             message: error.message,
             data: null
         };

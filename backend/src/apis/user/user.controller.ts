@@ -83,7 +83,8 @@ return userId === userIdFromSession
     ? performUpdate({userId, userActivationToken, userEmail, userHash, userName})
     : updateFailed("You are not allowed to perform this action")
 } catch (error) {
-    return response.json( {status:400, data: null, message: error.message})
+    // @ts-ignore
+        return response.json( {status:400, data: null, message: error.message})
  }
 }
 

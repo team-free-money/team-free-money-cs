@@ -7,7 +7,7 @@ export const signUpValidator: Schema= {
         },
         trim: true
     },
-    userHash: {
+    userPassword: {
         isLength: {
             errorMessage: 'Password must be at least eight characters',
             options: { min: 8 }
@@ -15,12 +15,22 @@ export const signUpValidator: Schema= {
         trim: true,
         escape: true
     },
-    userHashConfirm: {
+    userPasswordConfirm: {
         isLength: {
             errorMessage: 'confirm password must be at least eight characters',
             options: { min: 8 }
         },
         trim: true,
         escape: true
-    }
+    },
+    userName: {
+        escape: true,
+        trim: true,
+        isLength: {
+            errorMessage: 'user name must be between seven and thirty two characters',
+            options: {min:1, max: 32 }
+        }
+    },
+
 };
+

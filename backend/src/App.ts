@@ -10,6 +10,7 @@ import session, {MemoryStore} from "express-session";
 import passport from "passport";
 import {passportStrategy} from "./apis/sign-in/sign-in.controller";
 import {SignInRouter} from "./apis/sign-in/sign-in.route";
+import {SignOutRouter} from "./apis/sign-out/sign-out.route";
 
 
 
@@ -60,6 +61,7 @@ export class App {
     this.app.use('/apis/category', categoryRoute)
     this.app.use('/apis/sign-up', signUpRouter)
     this.app.use('/apis/sign-in', SignInRouter)
+    this.app.use('/apis/sign-out', SignOutRouter)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port

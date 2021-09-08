@@ -6,10 +6,29 @@ import {selectUserByUserEmail} from "../../utils/user/selectUserByUserEmail";
 import {selectUserByUserId} from "../../utils/user/selectUserByUserId";
 import {User} from "../../utils/interfaces/User";
 import {updateUser} from "../../utils/user/updateUser";
+import {selectAllUsers} from "../../utils/user/selectAllUsers";
 
 
 // controller for each user statement
 // get  statement select user by activation token
+
+export async function getAllUsersController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response> {
+    try {
+
+        // @ts-ignore
+        const data = await selectAllUsers()
+        const status: Status = {status: 200, message: null, data};
+        return response.json (status);
+    } catch (error) {
+        return response.json ({
+            status: 500,
+            message: "There was an error",
+            data: []
+        })
+    }
+}
+
+
 export async function getUserByUserActivationTokenController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response> {
     try {
 

@@ -19,7 +19,6 @@ create table scholarship(
 create table `user`(
                     userId binary(16) not null primary key,
                     userActivationToken char(32),
-                    userAdmin varchar(32) not null,
                     userEmail varchar(128) not null unique,
                     userHash char(97) not null,
                     userName varchar(32) not null unique,

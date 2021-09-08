@@ -7,7 +7,7 @@ export const signInValidator : Schema = {
         },
         trim: true
     },
-    userHash: {
+    userPassword: {
         isLength: {
             errorMessage: 'Password must be at least eight characters',
             options: { min: 8 }

@@ -5,6 +5,7 @@ import { indexRoute } from './apis/index.route'
 import {scholarshipRoute} from "./apis/scholarship/scholarship.route";
 import {userRoute} from "./apis/user/user.route";
 import {categoryRoute} from "./apis/category/category.route";
+import {signUpRouter} from "./apis/sign-up/sign-up.route";
 
 
 // The following class creates the app and instantiates the server
@@ -38,6 +39,7 @@ export class App {
     this.app.use('/apis/scholarships', scholarshipRoute)
     this.app.use('/apis/users', userRoute)
     this.app.use('/apis/category', categoryRoute)
+    this.app.use('/apis/sign-up', signUpRouter)
   }
 
   // starts the server and tells the terminal to post a message that the server is running and on what port

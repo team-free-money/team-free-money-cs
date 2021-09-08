@@ -64,11 +64,12 @@ export async function getUserByUserIdController(request: Request, response: Resp
 export async function putUserController(request: Request, response: Response) : Promise<Response>{
     try {
         const {userId} = request.params
-        const {userEmail, userName} = request.body
-        const user = <User>request.session.user
+        const {userActivationToken, userEmail, userHash, userName} = request.body
+        // @ts-ignore
+        const user = <User>request.session?.user
         const userIdFromSession = <string>user.userId
 
-        const preformUpdate = async (user: User) : Promise<Response> => {const previousUser: User = await selectUserByUserId(<string>user.userId) as User
+        const performUpdate = async (user: User) : Promise<Response> => {const previousUser: User = await selectUserByUserId(<string>user.userId) as User
         const newUser: User = {...previousUser}
         await updateUser(newUser)
             return response.json({status: 200, data: null, message: "User successfully updated"})
@@ -79,8 +80,8 @@ const updateFailed = (message: string) : Response => {
 }
 
 return userId === userIdFromSession
-    ? preformUpdate({userEmail, userName})
-    : updateFailed("you are not allowed to preform this action")
+    ? performUpdate({userId, userActivationToken, userEmail, userHash, userName})
+    : updateFailed("You are not allowed to perform this action")
 } catch (error) {
     return response.json( {status:400, data: null, message: error.message})
  }

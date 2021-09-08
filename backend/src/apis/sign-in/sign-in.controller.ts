@@ -19,6 +19,7 @@ export async function signInController(request: Request, response: Response, nex
             async (err: any, passportUser: User) => {
                 console.log(passportUser)
                 const {userId, userActivationToken, userEmail, userHash, userName} = passportUser;
+                // @ts-ignore
                 const signature: string = uuid();
                 const authorization: string = generateJwt({
                     userId,
@@ -37,8 +38,11 @@ export async function signInController(request: Request, response: Response, nex
                 const signInSuccessful = () => {
 
                     if (request.session) {
+                        // @ts-ignore
                         request.session.user = passportUser;
+                        // @ts-ignore
                         request.session.jwt = authorization;
+                        // @ts-ignore
                         request.session.signature = signature;
                     }
 

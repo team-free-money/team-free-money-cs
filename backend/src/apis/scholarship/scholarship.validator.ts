@@ -1,11 +1,6 @@
 import {Schema} from 'express-validator';
 
 export const scholarshipValidator : Schema = {
-    scholarshipId: {
-        isUUID: {
-            errorMessage: 'please provide a valid scholarshipId'
-        }
-    },
     scholarshipAmount: {
         isLength: {
             errorMessage: 'scholarship amount cannot be longer than 140 characters',

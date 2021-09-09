@@ -83,6 +83,7 @@ export async function getScholarshipsByCategoryIdController(request: Request, re
 
 export async function getScholarshipsByUserIdController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response> {
     try {
+        // @ts-ignore
         const user = request.session.user as User
         const userId : string = <string> user.userId
         // @ts-ignore
@@ -152,6 +153,7 @@ export async function postScholarship(request: Request, response: Response) : Pr
         return response.json(status);
 
     } catch(error) {
+        console.error(error)
         return  response.json({
             status: 500,
             message: "Error submitting scholarship try again later.",

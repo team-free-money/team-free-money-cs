@@ -2,12 +2,7 @@ import {Router} from "express";
 import {asyncValidatorController} from "../../utils/controllers/asnycValidator.controller";
 import {check} from "express-validator";
 import {checkSchema} from "express-validator";
-<<<<<<< HEAD
-import {getUserByUserEmailController, getUserByUserIdController} from "./user.controller";
-
-=======
 import {getAllUsersController, getUserByUserEmailController, getUserByUserIdController} from "./user.controller";
->>>>>>> 47076d5eebb9be882a39eb6da859bc1e7b45d669
 
 
 export const userRoute = Router();

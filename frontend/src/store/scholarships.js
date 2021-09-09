@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {httpConfig} from "../utils/httpConfig"
+import {httpConfig} from "../utils/httpConfig";
 
 const scholarshipSlice = createSlice({
     name: "scholarship",
@@ -16,3 +16,9 @@ export const {getAllScholarships} = scholarshipSlice.actions
 
 // We use export default here so that if something imports this file, they will get it by default
 export default scholarshipSlice.reducer
+
+//Create an export to allow async calls to our action
+export const fetchAllScholarships = () => async dispatch => {
+    const {data} = await httpConfig(`/apis/scholarships/`)
+    dispatch(getAllScholarships(data))
+}

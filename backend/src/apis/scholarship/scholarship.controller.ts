@@ -7,7 +7,7 @@ import {Status} from "../../utils/interfaces/Status";
 import {selectScholarshipsByCategoryId} from "../../utils/scholarship/selectScholarshipsByCategoryId";
 import {User} from "../../utils/interfaces/User";
 import {selectScholarshipsByLikeUserId} from "../../utils/scholarship/selectScholarshipByUserId";
-
+import {v1 as uuidv1} from "uuid";
 
 // controller for each scholarship statement
 // get all scholarships statement
@@ -136,7 +136,7 @@ export async function postScholarship(request: Request, response: Response) : Pr
         const userId = <string>request.session?.user.userId;
 
         const scholarship: Scholarship = {
-            scholarshipId: null,
+            scholarshipId: uuidv1(),
             scholarshipAmount,
             scholarshipCriteria,
             scholarshipDeadline,

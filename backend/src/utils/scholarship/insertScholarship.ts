@@ -6,10 +6,11 @@ export async function insertScholarship(scholarship: Scholarship) : Promise<stri
     console.log(scholarship)
 try {
     const mySqlConnection = await connect()
-    const mySqlQuery = "INSERT INTO scholarship(scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName) VALUES (UUID_TO_BIN(:scholarshipId), :scholarshipAmount, :scholarshipCriteria, :scholarshipDeadline, :scholarshipDescription, :scholarshipLink, :scholarshipName)";
+    const mySqlQuery = "INSERT INTO scholarship(scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName) VALUES (UUID_TO_BIN(uuid()), :scholarshipAmount, :scholarshipCriteria, :scholarshipDeadline, :scholarshipDescription, :scholarshipLink, :scholarshipName)";
     await mySqlConnection.execute(mySqlQuery, scholarship);
     return 'Scholarship Successfully Created'
 } catch (error) {
+        console.error(error)
     throw error
 }
 }

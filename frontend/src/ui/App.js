@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
-import {Search} from './Search'
 import {Navigation} from './Navbar'
 import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
@@ -13,13 +12,15 @@ import "./style.css"
 import {CreateAccount} from "./Create-Account";
 import {UserLogin} from "./UserLogin";
 import {Footer} from "./Footer";
-import {PostCard} from "./PostCard";
+import {Search} from "./search/Search";
 import {TopScholarship} from './Top-Scholarship'
+import {store} from "../store/store";
+import {Provider} from "react-redux";
 
 
-export const App = () => (
+export const App = (store) => (
     <>
-
+        <Provider store={store} >
         <BrowserRouter>
             <Navigation/>
             <Switch>
@@ -33,7 +34,7 @@ export const App = () => (
                 <Route exact path='/userhome' component={UserHome} />
                 <Route exact path='/login' component={UserLogin} />
                 <Route exact path='/create-account' component={CreateAccount} />
-                <Route exact path='/PostCard' component={PostCard} />
+                <Route exact path='/Search' component={Search} />
                 <Route exact path='/' component={Home} />
                 <Route exact path='/search' component={Search} />
 
@@ -44,6 +45,7 @@ export const App = () => (
             </Switch>
             <Footer/>
         </BrowserRouter>
+        </Provider>
     </>
 
 )

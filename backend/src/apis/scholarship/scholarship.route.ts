@@ -3,15 +3,16 @@ import {Router} from "express";
 import {
     getAllScholarshipsController,
     getScholarshipByScholarshipIdController,
-    getScholarshipByScholarshipNameController, getScholarshipsByCategoryIdController
+    getScholarshipByScholarshipNameController, getScholarshipsByCategoryIdController, getScholarshipsByUserIdController
 } from "./scholarship.controller";
 import {asyncValidatorController} from "../../utils/controllers/asnycValidator.controller"
 import {check} from "express-validator";
+import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 
 
 export const scholarshipRoute = Router();
 scholarshipRoute.route("/").get(getAllScholarshipsController)
-
+scholarshipRoute.route("/user").get(isLoggedIn, getScholarshipsByUserIdController)
 scholarshipRoute.route("/scholarshipId/:scholarshipId").get(  asyncValidatorController([
     check("scholarshipId", "please provide a valid scholarshipId").isUUID()
 ]), getScholarshipByScholarshipIdController)

@@ -5,6 +5,8 @@ import {insertScholarship} from "../../utils/scholarship/insertScholarship";
 import {selectAllScholarships} from "../../utils/scholarship/selectAllScholarships";
 import {Status} from "../../utils/interfaces/Status";
 import {selectScholarshipsByCategoryId} from "../../utils/scholarship/selectScholarshipsByCategoryId";
+import {User} from "../../utils/interfaces/User";
+import {selectScholarshipsByLikeUserId} from "../../utils/scholarship/selectScholarshipByUserId";
 
 
 // controller for each scholarship statement
@@ -78,6 +80,24 @@ export async function getScholarshipsByCategoryIdController(request: Request, re
         })
     }
 }
+
+export async function getScholarshipsByUserIdController(request: Request, response: Response, nextFunction: NextFunction):Promise<Response> {
+    try {
+        const user = request.session.user as User
+        const userId : string = <string> user.userId
+        // @ts-ignore
+        const data = await selectScholarshipsByLikeUserId(userId)
+        const status: Status = {status: 200, message: null, data};
+        return response.json (status);
+    } catch (error) {
+        return response.json ({
+            status: 500,
+            message: "There was an error",
+            data: []
+        })
+    }
+}
+
 
 
 

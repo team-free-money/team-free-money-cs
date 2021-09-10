@@ -18,6 +18,10 @@ export function SearchCard (props) {
                             <Card.Title>{scholarship.scholarshipName}</Card.Title>
                             <Card.Text>
                                 {scholarship.scholarshipDescription}
+                                {scholarship.scholarshipLink}
+                                {scholarship.scholarshipDeadline}
+                                {scholarship.scholarshipAmount}
+                                {scholarship.scholarshipCriteria}
                             </Card.Text>
                         </Card.Body>
                     </Col>
@@ -34,5 +38,4 @@ export function SearchCard (props) {
             </Card>
         </>
     )
-
 }

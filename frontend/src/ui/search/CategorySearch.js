@@ -4,11 +4,12 @@ import {fetchAllScholarships} from "../../store/scholarships";
 import {fetchScholarshipByCategoryName} from "../../store/scholarshipCategory";
 
 export const CategorySearch = (props) => {
-    const dispatch = useDispatch
+    const {match} = props
+    const dispatch = useDispatch()
     const initialEffects = () => {
-        dispatch(fetchScholarshipByCategoryName())
+        dispatch(fetchScholarshipByCategoryName(match.params.categoryName))
     }
-
+    React.useEffect(initialEffects, [match.params.categoryName, dispatch])
 
     const {keyword} = props
     // const categoryGeneral = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])

@@ -17,13 +17,9 @@ const scholarshipCategorySlice = createSlice({
 export const {getAllScholarshipCategories, setScholarshipCategory} = scholarshipCategorySlice.actions
 
 export const fetchScholarshipByCategoryName = (name) => async (dispatch, getState) => {
-    const categories = getState().categories
-    const category = categories.find(({categoryName}) => categoryName === name)
-    console.log(category)
-    for (const categoryName of categoryName) {
-        const {data} = await httpConfig.get(`/apis/scholarships/categoryName/${categoryName}`)
-        dispatch(setScholarshipCategory(data))
-    }
+    const {data} = await httpConfig("/apis/category/")
+    const category = data.find(({categoryName}) => categoryName === name)
+    console.log(data)
 
     // console.log("data", data)
 }

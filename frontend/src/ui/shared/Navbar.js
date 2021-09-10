@@ -44,9 +44,7 @@ export function Navigation () {
                             <Button variant="outline-success">Search</Button>
                         </Form>
                         <Nav.Link href="#deets">Log In</Nav.Link>
-                        <Nav.Link href="#memes">
-                            Sign up
-                        </Nav.Link>
+                        <Nav.Link href="#memes">Sign up</Nav.Link>
                     </Nav>
                 </Container>
 

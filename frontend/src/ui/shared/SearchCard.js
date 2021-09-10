@@ -8,7 +8,6 @@ export function SearchCard (props) {
         <>
             <Card>
                 <Card.Header className="text-center">Scholarship Search Results</Card.Header>
-
                 <Row>
                     <Col sm={1} >
                         <Star className="m-5" size={50}/>
@@ -18,10 +17,10 @@ export function SearchCard (props) {
                             <Card.Title>{scholarship.scholarshipName}</Card.Title>
                             <Card.Text>
                                 {scholarship.scholarshipDescription}
-                                {scholarship.scholarshipLink}
                                 {scholarship.scholarshipDeadline}
                                 {scholarship.scholarshipAmount}
                                 {scholarship.scholarshipCriteria}
+                                {scholarship.scholarshipLink}
                             </Card.Text>
                         </Card.Body>
                     </Col>
@@ -31,10 +30,7 @@ export function SearchCard (props) {
                             <span className="visually-hidden"></span>
                         </Button>
                     </Col>
-
-
                 </Row>
-
             </Card>
         </>
     )

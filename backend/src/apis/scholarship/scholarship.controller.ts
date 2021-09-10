@@ -99,28 +99,6 @@ export async function getScholarshipsByUserIdController(request: Request, respon
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Insert Scholarship Controller
 export async function postScholarship(request: Request, response: Response) : Promise<Response<Status>> {
     try {

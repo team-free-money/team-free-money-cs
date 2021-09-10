@@ -1,10 +1,19 @@
 
 import React from "react"
-
 import {Button, Container, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
 import logo from "../../images/logoteam.png"
-export function Navigation () {
+import {useDispatch, useSelector} from "react-redux";
+import {fetchAllCategories} from "../../store/category";
+import {Link} from "react-router-dom";
 
+export function Navigation () {
+    const dispatch = useDispatch()
+    const initialeffects = () => {
+        dispatch(fetchAllCategories())
+    }
+    const categories = useSelector(state => state.categories ? state.categories : [])
+    React.useEffect(initialeffects, [dispatch])
+    console.log(categories)
     return (
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark">
@@ -16,13 +25,10 @@ export function Navigation () {
                         <Nav className="me-auto">
                             <Nav.Link href="#About">About Us</Nav.Link>
                             <Nav.Link href="#Mission">Our Mission</Nav.Link>
-                            <NavDropdown title="Scholarship" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="#">General</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Veteran</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Native American</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Women</NavDropdown.Item>
-                                <NavDropdown.Item href="#">Hispanic</NavDropdown.Item>
-                            </NavDropdown>
+                            <NavDropdown title="Scholarship" id="collapsible-nav-dropdown">
+                                {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
+                                 <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
+                                </NavDropdown>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

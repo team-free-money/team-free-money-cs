@@ -2,6 +2,9 @@ import React from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllScholarships} from "../../store/scholarships";
 import {fetchScholarshipByCategoryName} from "../../store/scholarshipCategory";
+import {SearchCard} from "../shared/SearchCard";
+import {Container} from "react-bootstrap";
+
 
 export const CategorySearch = (props) => {
     const {match} = props
@@ -10,18 +13,14 @@ export const CategorySearch = (props) => {
         dispatch(fetchScholarshipByCategoryName(match.params.categoryName))
     }
     React.useEffect(initialEffects, [match.params.categoryName, dispatch])
-
-    const {keyword} = props
-    // const categoryGeneral = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])
-    // const categoryNativeAmerican = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])
-    // const categoryHispanic = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])
-    // const categoryWomen = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])
-    // const categoryVeteran = useSelector((state) => state.category.categoryId ? state.category.categoryId : [])
-    // console.log(categoryGeneral, categoryGeneral, categoryGeneral, categoryGeneral, categoryGeneral);
-    // const toggle = useSelector((state) => state.toggle ? state.toggle : false);
+    console.log(match.params.categoryName)
+    const scholarshipCategory = useSelector(state => state.scholarshipCategory ? state.scholarshipCategory : [])
+    console.log(scholarshipCategory)
     return (
         <>
-        it's alive
+            <Container fluid>
+                {scholarshipCategory.map(scholarship => <SearchCard key ={scholarship.scholarshipId} scholarship = {scholarship}/>)}
+            </Container>
         </>
     )
 }

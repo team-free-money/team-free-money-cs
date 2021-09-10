@@ -9,7 +9,7 @@ const scholarshipCategorySlice = createSlice({
             return action.payload
         },
         setScholarshipCategory: (scholarshipCategory, action) => {
-            scholarshipCategory.push(...action.payload)
+          return action.payload
         }
     },
 })
@@ -17,11 +17,17 @@ const scholarshipCategorySlice = createSlice({
 export const {getAllScholarshipCategories, setScholarshipCategory} = scholarshipCategorySlice.actions
 
 export const fetchScholarshipByCategoryName = (name) => async (dispatch, getState) => {
-    const {data} = await httpConfig("/apis/category/")
-    const category = data.find(({categoryName}) => categoryName === name)
-    console.log(data)
+    const result = await httpConfig("/apis/category/")
+    const categories = result.data
+    const category = categories.find(({categoryName}) => categoryName === name)
+    console.log(category)
 
-    // console.log("data", data)
+    if (category){
+        const {data} = await httpConfig (`/apis/scholarships/categoryId/${category.categoryId}`)
+        console.log("data", data)
+        dispatch(setScholarshipCategory(data))
+    }
+
 }
 
 export default scholarshipCategorySlice.reducer

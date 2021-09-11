@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router'
 import { Home } from './Home'
 import { FourOhFour } from './FourOhFour'
 import React from 'react'
-import {Navigation} from './shared/Navbar'
+import {Navigation} from "./shared/Navbar";
 import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
 import {Header} from "./Header";

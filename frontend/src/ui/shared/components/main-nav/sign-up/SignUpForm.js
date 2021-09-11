@@ -13,8 +13,7 @@ export const SignUpForm = () => {
     };
 
     const validator = Yup.object().shape({
-        userName: Yup.string()
-            .name("username must be at least 8 characters"),
+          userName: Yup.string()  .required("username must be at least 8 characters"),
         userEmail: Yup.string()
             .email("email must be a valid email")
             .required('email is required'),

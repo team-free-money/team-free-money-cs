@@ -67,16 +67,18 @@ export function Navigation (props) {
                             />
                             <Button variant="outline-success">Search</Button>
                         </Form>
-                        <Nav.Link href="#deets">Log In</Nav.Link>
-                        <Nav.Link href="#memes">Sign up</Nav.Link>
+
+
+                            <>
+                                <SignUpModal/>
+                                {'\u00A0'}
+
+                                <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
+                            </>
+
                     </Nav>
                 </Container>
-                {isModalOpen()  &&  (
-                    <>
-                        <SignUpModal/>
-                        <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
-                    </>
-                )}
+
 
             </Navbar>
         </>

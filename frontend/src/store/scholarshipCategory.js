@@ -9,7 +9,7 @@ const scholarshipCategorySlice = createSlice({
             return action.payload
         },
         setScholarshipCategory: (scholarshipCategory, action) => {
-          return action.payload
+            return action.payload
         }
     },
 })

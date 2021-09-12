@@ -109,7 +109,7 @@ export async function postScholarship(request: Request, response: Response) : Pr
             scholarshipDescription,
             scholarshipLink,
             scholarshipName} = request.body;
-        // const user : User = request.session.id as User
+        // const UpdateUser : User = request.session.id as User
         // @ts-ignore
         const userId = <string>request.session?.user.userId;
 

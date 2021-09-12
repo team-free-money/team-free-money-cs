@@ -17,7 +17,7 @@ import {scholarshipValidator} from "./scholarship.validator";
 export const scholarshipRoute = Router();
 scholarshipRoute.route("/").get(getAllScholarshipsController)
     .post(isLoggedIn, asyncValidatorController(checkSchema(scholarshipValidator)), postScholarship)
-scholarshipRoute.route("/user").get(isLoggedIn, getScholarshipsByUserIdController)
+scholarshipRoute.route("/userId").get(isLoggedIn, getScholarshipsByUserIdController)
 scholarshipRoute.route("/scholarshipId/:scholarshipId").get(  asyncValidatorController([
     check("scholarshipId", "please provide a valid scholarshipId").isUUID()
 ]), getScholarshipByScholarshipIdController)

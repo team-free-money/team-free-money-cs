@@ -22,8 +22,12 @@ export const fetchUserByUserId = () => async (dispatch, getState) => {
     const {auth} = getState()
     console.log(auth)
     if(auth !== null) {
+        console.log(auth)
         const {data} = await httpConfig.get(`/apis/user/${auth.userId}`)
         console.log(data)
         dispatch(getUserByUserId(data))
     }
 }
+
+
+

@@ -1,6 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {httpConfig} from "../utils/httpConfig";
-
+import {fetchAuth} from "./auth";
+import {fetchUserByUserId} from "./user";
 const scholarshipSlice = createSlice({
     name: "scholarship",
     initialState: [],
@@ -22,3 +23,4 @@ export const fetchAllScholarships = () => async dispatch => {
     const {data} = await httpConfig(`/apis/scholarships/`)
     dispatch(getAllScholarships(data))
 }
+

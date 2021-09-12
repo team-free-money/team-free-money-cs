@@ -6,9 +6,10 @@ import {useDispatch} from "react-redux";
 import * as jwtDecode from 'jwt-decode'
 import { getAuth } from '../../../../../store/auth'
 import {httpConfig} from "../../../../../utils/httpConfig";
+import {useHistory} from "react-router";
 
 export const SignInForm = () => {
-
+const history = useHistory()
     const dispatch = useDispatch()
 
     const validator = Yup.object().shape({
@@ -41,6 +42,8 @@ export const SignInForm = () => {
                     let jwtToken = jwtDecode(reply.headers["authorization"])
                     console.log(jwtToken);
                     dispatch(getAuth(jwtToken))
+
+                   history.push("/userhome")
                 }
                 setStatus({message, type});
             });

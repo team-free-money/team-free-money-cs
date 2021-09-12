@@ -26,7 +26,7 @@ export function Navigation (props) {
     const handleShow = () => setShow(true);
 
     // isModalOpen prevents the sign in modal being removed from the dom before the
-    // sign-in modal is closed by the user
+    // sign-in modal is closed by the UpdateUser
     const isModalOpen = ()=> {
         if(!auth) {
             return !auth

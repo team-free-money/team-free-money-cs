@@ -7,7 +7,7 @@ import {Navigation} from "./shared/Navbar";
 import {ScholarshipSubmission} from "./Scholarship-Submission";
 import {ScholarshipApproval} from "./Scholarship-Approval";
 import {Header} from "./Header";
-import  {UserHome} from "./UserHome";
+import  {UserHome} from "./UpdateUser/UserHome";
 import "./style.css"
 import {CreateAccount} from "./Create-Account";
 import {UserLogin} from "./UserLogin";

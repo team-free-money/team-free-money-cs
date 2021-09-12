@@ -3,9 +3,12 @@ import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import IMG1 from "../images/Aboutus.png"
 import IMG2 from "./mission.png"
 import "./style.css"
+import {UserHome} from "./UpdateUser/UserHome";
+import auth from "../store/auth";
 export const Home = () => {
     return (
         <>
+
 
             <Container as={"section"} className='mt-3 mb-4 p-2' id="About">
 
@@ -36,7 +39,6 @@ export const Home = () => {
                             </Row>
 
                         </Container>
-
         </>
     )
 }

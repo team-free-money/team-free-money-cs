@@ -10,6 +10,7 @@ export const Search = () => {
     const dispatch = useDispatch()
     const initialEffects = () => {
         dispatch(fetchAllScholarships())
+        // dispatch(fetchAllScholarshipLikes)
     }
     React.useEffect(initialEffects, [dispatch])
     const scholarships = useSelector(state => state.scholarships ? state.scholarships : [])

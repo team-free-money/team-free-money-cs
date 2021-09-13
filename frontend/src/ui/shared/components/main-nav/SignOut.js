@@ -1,11 +1,11 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-
 import { getAuth } from '../../../../store/auth'
 import {httpConfig} from "../../../../utils/httpConfig";
+import {Button} from "react-bootstrap";
 
 
-export const SignOutComponent = () => {
+export const SignOut = () => {
     const dispatch = useDispatch()
     const signOut = () => {
         httpConfig.get('/apis/sign-out/').then(reply => {
@@ -21,10 +21,10 @@ export const SignOutComponent = () => {
 
     return(
         <>
-            <div className="dropdown-item sign-out-dropdown">
-                <button className="btn btn-outline-dark" onClick={signOut}>
-                    Sign Out&nbsp;&nbsp;
-                </button>
+            <div>
+                <Button variant="primary" className="btn btn-outline-dark mx-2"  onClick={signOut}>
+                    Sign Out
+                </Button>
             </div>
         </>
     )

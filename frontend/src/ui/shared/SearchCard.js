@@ -47,8 +47,6 @@ export function SearchCard (props) {
                     <Col>
                         <Button onClick = {clickLike} variant="info" style={{marginLeft: "auto", display:"block"}}>
                             <Badge bg="secondary">{scholarship.likeCount}</Badge>Save
-                            <span className="visually-hidden"></span>
-
                         </Button>
                     </Col>
                 </Row>

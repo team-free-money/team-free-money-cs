@@ -4,18 +4,20 @@ import logo from "../../images/logoteam.png"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllCategories} from "../../store/category";
 import {Link} from "react-router-dom";
-import auth from "../../store/auth";
+import {fetchAuth} from "../../store/auth";
 import {SignUpModal} from "./components/main-nav/sign-up/SignUpModal";
 import {SignInModal} from "./components/main-nav/sign-in/SignInModal";
 import {SignInForm} from "./components/main-nav/sign-in/SignInForm";
 import {SignUpForm} from "./components/main-nav/sign-up/SignUpForm";
-import {SignOutComponent} from "./components/main-nav/SignOut";
+import {SignOut} from "./components/main-nav/SignOut";
 
 
 export function Navigation (props) {
+    const auth = useSelector(state => state.auth);
     const dispatch = useDispatch()
     const initialeffects = () => {
         dispatch(fetchAllCategories())
+        dispatch(fetchAuth());
     }
     const inputs = [];
     useEffect(initialeffects, inputs);
@@ -68,19 +70,25 @@ export function Navigation (props) {
                             <Button variant="outline-success">Search</Button>
                         </Form>
 
-
+                        {auth ? (
                             <>
-                                <SignUpModal/>
-                                {'\u00A0'}
-
-                                <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
+                                Welcome,{'\u00A0'}
+                                {auth?.userName ?? ''}
+                                <Navbar.Brand href="/userhome">UserHome</Navbar.Brand>
+                                <SignOut />
                             </>
+                        ) : (
+                            isModalOpen() && (
+                                <>
+                                    <SignUpModal/>
+                                    {'\u00A0'}
 
+                                    <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
+                                </>
+                            ))}
                     </Nav>
                 </Container>
-
-
             </Navbar>
         </>
-    )
+    );
 }

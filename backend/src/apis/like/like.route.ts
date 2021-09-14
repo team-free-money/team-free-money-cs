@@ -23,4 +23,4 @@ likeRouter.route('/likeUserId/:likeUserId')
     .get(getLikeByLikeUserIdController);
 
 likeRouter.route('/likeScholarshipId/:likeScholarshipId')
-    .get(getLikeByLikeScholarshipIdController)
+    .get(asyncValidatorController([check("likeScholarshipId", "Please provide a valid UUID").isUUID()]),getLikeByLikeScholarshipIdController)

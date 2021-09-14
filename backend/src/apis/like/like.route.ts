@@ -1,14 +1,14 @@
 import { Router } from 'express';
 import {
     getAllLikesController,
-    // getLikeByLikeScholarshipIdController,
+    getLikeByLikeScholarshipIdController,
     getLikeByLikeUserIdController,
     toggleLikeController
 } from "./like.controller";
 import {isLoggedIn} from "../../utils/controllers/isLoggedIn.controller";
 import {asyncValidatorController} from "../../utils/controllers/asnycValidator.controller";
 import {check} from "express-validator";
-import {getScholarshipsByUserIdController} from "../scholarship/scholarship.controller";
+
 
 
 export const likeRouter = Router();
@@ -22,5 +22,5 @@ likeRouter.route('/')
 likeRouter.route('/likeUserId/:likeUserId')
     .get(getLikeByLikeUserIdController);
 
-// likeRouter.route('/likeScholarshipId/:likeScholarshipId')
-//     .get(getLikeByLikeScholarshipIdController)
+likeRouter.route('/likeScholarshipId/:likeScholarshipId')
+    .get(getLikeByLikeScholarshipIdController)

@@ -3,8 +3,8 @@ import {Badge, Button, Card, Col, Row} from "react-bootstrap";
 import {Star} from "react-bootstrap-icons";
 import {httpConfig} from "../../utils/httpConfig";
 import like, {fetchAllLikes} from "../../store/like";
-import scholarships, {fetchAllScholarships} from "../../store/scholarships";
-import {useDispatch} from "react-redux";
+import scholarships, {fetchAllScholarships, fetchScholarshipsByUserId} from "../../store/scholarships";
+import {useDispatch, useSelector} from "react-redux";
 
 export function SearchCard (props) {
     const dispatch = useDispatch()
@@ -12,13 +12,18 @@ export function SearchCard (props) {
         dispatch(fetchAllLikes())
 }
     const {scholarship} = props
+    const likes = useSelector((state) => state.likes ? state.likes : [])
+
+    const totalLikes = likes.reduce((previousValue, currentValue) => previousValue + (currentValue.likeScholarshipId = scholarship.scholarshipId ? 1 : 0), 0)
+
+
 
     const clickLike = () => {
         httpConfig.post('/apis/like/', {likeScholarshipId: scholarship.scholarshipId})
             .then(reply => {
                     if (reply.status === 200) {
                         console.log(reply);
-                        dispatch(fetchAllLikes());
+                        dispatch(fetchScholarshipsByUserId());
                     }
                     console.log(reply);
                 }
@@ -46,7 +51,7 @@ export function SearchCard (props) {
                     </Col>
                     <Col>
                         <Button onClick = {clickLike} variant="info" style={{marginLeft: "auto", display:"block"}}>
-                            <Badge bg="secondary">{scholarship.likeCount}</Badge>Save
+                            <Badge bg="secondary">{totalLikes}</Badge>Save
                         </Button>
                     </Col>
                 </Row>

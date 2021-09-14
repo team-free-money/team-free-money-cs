@@ -64,19 +64,19 @@ export const getAllLikesController = async (request: Request, response: Response
 };
 
 
-// export const getLikeByLikeScholarshipIdController = async (request: Request, response: Response): Promise<Response> => {
-//     try {
-//         const {likeScholarshipId} = request.params;
-//         const mySqlResult = await selectLikeByLikeScholarshipId(likeScholarshipId)
-//         const data = mySqlResult ?? null
-//         const status: Status = {status: 200, data, message: null}
-//         return response.json(status)
-//
-//     } catch (error) {
-//         // @ts-ignore
-//         return (response.json({status: 400, data: null, message: error.message}))
-//     }
-// };
+export const getLikeByLikeScholarshipIdController = async (request: Request, response: Response): Promise<Response> => {
+    try {
+        const {likeScholarshipId} = request.params;
+        const mySqlResult = await selectLikeByLikeScholarshipId(likeScholarshipId)
+        const data = mySqlResult ?? null
+        const status: Status = {status: 200, data, message: null}
+        return response.json(status)
+
+    } catch (error) {
+        // @ts-ignore
+        return (response.json({status: 400, data: null, message: error.message}))
+    }
+};
 
 export const getLikeByLikeUserIdController = async (request: Request, response: Response): Promise<Response> => {
     try {

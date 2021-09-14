@@ -1,16 +1,17 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {httpConfig} from "../utils/httpConfig";
+import * as likes from "lodash";
 
 
 const likeSlice = createSlice({
     name: "likes",
     initialState: [],
     reducers: {
-        getLikeAll: (posts, action) => {
+        getLikeAll: (likes, action) => {
             return action.payload
         },
-        getLikeByLikeScholarshipId: (post, action) => {
-            return action.payload
+        getLikeByLikeScholarshipId: (likes, action) => {
+            likes.push (action.payload)
         }
     }
 })
@@ -21,8 +22,8 @@ export const fetchAllLikes = () => async dispatch => {
     dispatch(getLikeAll(data))
 }
 
-export const fetchLikeByLikeScholarshipId = (likeUserId) => async dispatch => {
-    const{data} = await httpConfig(`/apis/like/scholarship/user/${likeUserId}`)
+export const fetchLikeByLikeScholarshipId = (likeScholarshipId) => async dispatch => {
+    const{data} = await httpConfig(`/apis/like/likeUserId/${likeScholarshipId}`)
     dispatch(getLikeByLikeScholarshipId(data))
 }
 

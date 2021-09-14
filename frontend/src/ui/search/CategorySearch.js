@@ -1,7 +1,7 @@
 import React from "react"
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllScholarships} from "../../store/scholarships";
-import {fetchScholarshipByCategoryName} from "../../store/scholarshipCategory";
+import {fetchScholarshipByCategoryName, fetchScholarshipsByCategoryAndLikes} from "../../store/scholarshipCategory";
 import {SearchCard} from "../shared/SearchCard";
 import {Container} from "react-bootstrap";
 
@@ -10,7 +10,7 @@ export const CategorySearch = (props) => {
     const {match} = props
     const dispatch = useDispatch()
     const initialEffects = () => {
-        dispatch(fetchScholarshipByCategoryName(match.params.categoryName))
+        dispatch(fetchScholarshipsByCategoryAndLikes(match.params.categoryName))
     }
     React.useEffect(initialEffects, [match.params.categoryName, dispatch])
     console.log(match.params.categoryName)

@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {fetchScholarshipsByUserId} from "../../store/scholarships";
 import {SearchCard} from "../shared/SearchCard";
+import {fetchAllLikes} from "../../store/like";
 export const UserHome = () => {
 
     const dispatch = useDispatch()
@@ -15,6 +16,7 @@ export const UserHome = () => {
     const sideEffects = () => {
         dispatch(fetchUserByUserId())
         dispatch(fetchScholarshipsByUserId())
+        dispatch(fetchAllLikes())
     }
     console.log(scholarships)
     React.useEffect(sideEffects, [dispatch])
@@ -25,7 +27,6 @@ export const UserHome = () => {
                     <Col>
                         {scholarships.map(scholarship => <SearchCard key ={scholarship.scholarshipId} scholarship = {scholarship}/>)}
                     </Col>
-
                 </Row>
             </Container>
         </>

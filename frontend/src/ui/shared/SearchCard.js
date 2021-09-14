@@ -5,12 +5,15 @@ import {httpConfig} from "../../utils/httpConfig";
 import like, {fetchAllLikes} from "../../store/like";
 import scholarships, {fetchAllScholarships, fetchScholarshipsByUserId} from "../../store/scholarships";
 import {useDispatch, useSelector} from "react-redux";
+import {fetchScholarshipByCategoryName, fetchScholarshipsByCategoryAndLikes} from "../../store/scholarshipCategory";
+import {fetchUserByUserId} from "../../store/user";
 
 export function SearchCard (props) {
 const dispatch = useDispatch()
-    const {scholarship} = props
+    const {scholarship, match} = props
     const totalLikes = useSelector(state => state.likes ? state.likes.filter(like => like.likeScholarshipId === scholarship.scholarshipId) :[])
     console.log(totalLikes.length)
+
 
 
 
@@ -22,7 +25,15 @@ const dispatch = useDispatch()
             .then(reply => {
                     if (reply.status === 200) {
                         console.log(reply);
-                        dispatch(fetchScholarshipsByUserId());
+                        dispatch(fetchScholarshipsByUserId())
+                        // {dispatch(fetchAllLikes())
+                        if (match?.params.categoryName) {
+                            dispatch(fetchScholarshipsByCategoryAndLikes(match.params.categoryName));
+                        }
+
+
+
+                        console.log(scholarship)
                     }
                     console.log(reply);
                 }
@@ -50,7 +61,7 @@ const dispatch = useDispatch()
                     </Col>
                     <Col>
                         <Button onClick = {clickLike} variant="info" style={{marginLeft: "auto", display:"block"}}>
-                            <Badge bg="secondary">{totalLikes.length}</Badge>Save
+                            <Badge bg="secondary">{scholarship.likeCount}</Badge>Save
                         </Button>
                     </Col>
                 </Row>

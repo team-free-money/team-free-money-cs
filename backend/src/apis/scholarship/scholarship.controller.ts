@@ -108,7 +108,8 @@ export async function postScholarship(request: Request, response: Response) : Pr
             scholarshipDeadline,
             scholarshipDescription,
             scholarshipLink,
-            scholarshipName} = request.body;
+            scholarshipName,
+            likeCount} = request.body;
         // const UpdateUser : User = request.session.id as User
         // @ts-ignore
         const userId = <string>request.session?.user.userId;
@@ -120,7 +121,8 @@ export async function postScholarship(request: Request, response: Response) : Pr
             scholarshipDeadline,
             scholarshipDescription,
             scholarshipLink,
-            scholarshipName
+            scholarshipName,
+            likeCount
         }
         const result = await insertScholarship(scholarship)
         const status: Status = {

@@ -14,12 +14,13 @@ export const CategorySearch = (props) => {
     }
     React.useEffect(initialEffects, [match.params.categoryName, dispatch])
     console.log(match.params.categoryName)
+
     const scholarshipCategory = useSelector(state => state.scholarshipCategory ? state.scholarshipCategory : [])
     console.log(scholarshipCategory)
     return (
         <>
             <Container fluid>
-                {scholarshipCategory.map(scholarship => <SearchCard key ={scholarship.scholarshipId} scholarship = {scholarship}/>)}
+                {scholarshipCategory.map(scholarship => <SearchCard key ={scholarship.scholarshipId} scholarship = {scholarship} match = {match}/>)}
             </Container>
         </>
     )

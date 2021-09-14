@@ -8,10 +8,11 @@ export async function selectScholarshipsByLikeUserId(likeUserId: string) : Promi
     try {
 
         const mySqlConnection = await connect();
-        const mySqlQuery = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName FROM scholarship INNER JOIN `like` ON ScholarshipId = likeScholarshipId WHERE likeUserId = uuid_to_bin(:likeUserId)"
+        const mySqlQuery = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName, (SELECT COUNT(likeScholarshipId) FROM `like` WHERE scholarship.scholarshipId = `like`.likeScholarshipId) AS likeCount FROM scholarship INNER JOIN `like` ON ScholarshipId = likeScholarshipId WHERE likeUserId = uuid_to_bin(:likeUserId)"
         const result = await <RowDataPacket>mySqlConnection.execute(mySqlQuery, {likeUserId})
         return result[0] as Scholarship[]
     } catch (error) {
         throw error
     }
 }
+

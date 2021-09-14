@@ -11,7 +11,8 @@ const likeSlice = createSlice({
             return action.payload
         },
         getLikeByLikeScholarshipId: (likes, action) => {
-            likes.push (action.payload)
+            console.log(...action.payload)
+            likes.push (...action.payload)
         }
     }
 })
@@ -23,8 +24,9 @@ export const fetchAllLikes = () => async dispatch => {
 }
 
 export const fetchLikeByLikeScholarshipId = (likeScholarshipId) => async dispatch => {
-    const{data} = await httpConfig(`/apis/like/likeUserId/${likeScholarshipId}`)
+    const{data} = await httpConfig(`/apis/like/likeScholarshipId/${likeScholarshipId}`)
     dispatch(getLikeByLikeScholarshipId(data))
 }
 
 export default likeSlice.reducer
+

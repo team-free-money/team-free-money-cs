@@ -32,11 +32,12 @@ export const fetchScholarshipsByCategoryAndLikes = (name) => async (dispatch, ge
     const result = await httpConfig("/apis/category/")
     const categories = result.data
     const category = categories.find(({categoryName}) => categoryName === name)
-    console.log(category)
-    // todo grab auth from getState. If we get auth, getLikeScholarshipByScholarshipLikeId
+
+
     if (category) {
         await dispatch(fetchScholarshipByCategoryName(category.categoryId))
-        const likeScholarshipIds = _.uniq(_.map(getState().scholarshipCategory, "likeUserId"));
+        const likeScholarshipIds = _.uniq(_.map(getState().scholarshipCategory, "scholarshipId"));
+        console.log("likescholarshipId", likeScholarshipIds)
         likeScholarshipIds.forEach(id => dispatch(fetchLikeByLikeScholarshipId(id)));
     }
 

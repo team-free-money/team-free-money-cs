@@ -2,6 +2,8 @@ import {createSlice} from "@reduxjs/toolkit";
 import {httpConfig} from "../utils/httpConfig";
 import {fetchAuth} from "./auth";
 import {fetchUserByUserId, getUserByUserId} from "./user";
+import _ from "lodash";
+import {fetchLikeByLikeScholarshipId} from "./like";
 const scholarshipSlice = createSlice({
     name: "scholarship",
     initialState: [],
@@ -31,6 +33,9 @@ export const fetchScholarshipsByUserId = () => async (dispatch, getState) => {
 
         const {data} = await httpConfig.get(`/apis/scholarships/userId/`)
         console.log(data)
-        dispatch(getAllScholarshipsByUserId(data))
+        await dispatch(getAllScholarshipsByUserId(data))
+    const likeScholarshipIds = _.uniq(_.map(getState().scholarships, "scholarshipId"));
+    console.log("likescholarshipId", likeScholarshipIds)
+    likeScholarshipIds.forEach(id => dispatch(fetchLikeByLikeScholarshipId(id)));
 }
 

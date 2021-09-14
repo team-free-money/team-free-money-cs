@@ -7,14 +7,13 @@ import scholarships, {fetchAllScholarships, fetchScholarshipsByUserId} from "../
 import {useDispatch, useSelector} from "react-redux";
 
 export function SearchCard (props) {
-    const dispatch = useDispatch()
-    const initialEffects = () => {
-        dispatch(fetchAllLikes())
-}
+const dispatch = useDispatch()
     const {scholarship} = props
-    const likes = useSelector((state) => state.likes ? state.likes : [])
+    const totalLikes = useSelector(state => state.likes ? state.likes.filter(like => like.likeScholarshipId === scholarship.scholarshipId) :[])
+    console.log(totalLikes.length)
 
-    const totalLikes = likes.reduce((previousValue, currentValue) => previousValue + (currentValue.likeScholarshipId = scholarship.scholarshipId ? 1 : 0), 0)
+
+
 
 
 
@@ -51,7 +50,7 @@ export function SearchCard (props) {
                     </Col>
                     <Col>
                         <Button onClick = {clickLike} variant="info" style={{marginLeft: "auto", display:"block"}}>
-                            <Badge bg="secondary">{totalLikes}</Badge>Save
+                            <Badge bg="secondary">{totalLikes.length}</Badge>Save
                         </Button>
                     </Col>
                 </Row>

@@ -56,41 +56,71 @@ export function Navigation (props) {
                                     <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
                             </NavDropdown>
                         </Nav>
+
+                            {/*    <Form className="d-flex">*/}
+                            {/*        <FormControl*/}
+                            {/*            type="search"*/}
+                            {/*            placeholder="Search..."*/}
+                            {/*            className="mr-2"*/}
+                            {/*            aria-label="Search"*/}
+                            {/*        />*/}
+                            {/*        <Button variant="outline-success">Search</Button>*/}
+                            {/*    </Form>*/}
+
                     </Navbar.Collapse>
                 </Container>
-                <Container className="justify-content-end">
-                    <Nav>
-                    {/*    <Form className="d-flex">*/}
-                    {/*        <FormControl*/}
-                    {/*            type="search"*/}
-                    {/*            placeholder="Search..."*/}
-                    {/*            className="mr-2"*/}
-                    {/*            aria-label="Search"*/}
-                    {/*        />*/}
-                    {/*        <Button variant="outline-success">Search</Button>*/}
-                    {/*    </Form>*/}
+                <Nav>
+                {auth ? (
+                    <>
+                        <Navbar.Text>
+                            Signed in as: <a href={auth?.userName ?? ''}></a>
+                        </Navbar.Text>
+                        <NavDropdown title ={auth?.userName ?? ''} id = 'basic-nav-dropdown'>
+                            <NavDropdown.Item href = '/userhome'>My Likes</NavDropdown.Item>
+                        </NavDropdown>
+                        <SignOut />
+                    </>
+                ) : (
+                    isModalOpen() && (
+                        <>
+                            <SignUpModal />
+                            <SignInModal show = {show} handleClose = {handleClose} handleShow = {handleShow} />
+                        </>
+                    ))}
+            </Nav>
+                {/*<Container className="justify-content-end">*/}
+                {/*    <Nav>*/}
+                {/*        /!*    <Form className="d-flex">*!/*/}
+                {/*        /!*        <FormControl*!/*/}
+                {/*        /!*            type="search"*!/*/}
+                {/*        /!*            placeholder="Search..."*!/*/}
+                {/*        /!*            className="mr-2"*!/*/}
+                {/*        /!*            aria-label="Search"*!/*/}
+                {/*        /!*        />*!/*/}
+                {/*        /!*        <Button variant="outline-success">Search</Button>*!/*/}
+                {/*        /!*    </Form>*!/*/}
 
-                        {auth ? (
-                            <>
-                               <h2> <span class="Welcome mx-5">
-                                Welcome,{'\u00A0'}
+                    {/*    {auth ? (*/}
+                    {/*        <>*/}
+                    {/*            <h2> <span class="Welcome mx-5">*/}
+                    {/*            Welcome,{'\u00A0'}*/}
 
-                                {auth?.userName ?? ''}
-                                    </span></h2>
-                                <Navbar.Brand href="/userhome">UserHome</Navbar.Brand>
-                                <SignOut />
-                            </>
-                        ) : (
-                            isModalOpen() && (
-                                <>
-                                    <SignUpModal/>
-                                    {'\u00A0'}
+                    {/*                {auth?.userName ?? ''}*/}
+                    {/*                </span></h2>*/}
+                    {/*            <Navbar.Brand href="/userhome">UserHome</Navbar.Brand>*/}
+                    {/*            <SignOut />*/}
+                    {/*        </>*/}
+                    {/*    ) : (*/}
+                    {/*        isModalOpen() && (*/}
+                    {/*            <>*/}
+                    {/*                <SignUpModal/>*/}
+                    {/*                {'\u00A0'}*/}
 
-                                    <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>
-                                </>
-                            ))}
-                    </Nav>
-                </Container>
+                    {/*                <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>*/}
+                    {/*            </>*/}
+                    {/*        ))}*/}
+                    {/*</Nav>*/}
+                {/*</Container>*/}
             </Navbar>
         </>
     );

@@ -44,19 +44,18 @@ export function Navigation (props) {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark">
-                <Container>
+                {/*<Container>*/}
                     <img src={logo1} className="m-3 rounded-circle text-dark" alt="" width={110}/>
                     <Navbar.Brand href="/">NMSF</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto justify-content-center">
+                        <Nav className="justify-content-end">
                             <NavDropdown title="Scholarships" id="collapsible-nav-dropdown">
                                 {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
                                     <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
                             </NavDropdown>
-                        </Nav>
-                        <Container className="justify-content-end">
-                            <Nav>
+                        {/*<Container className="justify-content-end">*/}
+
 
                                 {auth ? (
                                     <>
@@ -78,10 +77,10 @@ export function Navigation (props) {
                                         </>
                                     ))}
                             </Nav>
-                        </Container>
+                        {/*</Container>*/}
 
                     </Navbar.Collapse>
-                </Container>
+                {/*</Container>*/}
 
             </Navbar>
         </>

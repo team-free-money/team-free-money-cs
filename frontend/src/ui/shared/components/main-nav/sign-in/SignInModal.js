@@ -10,7 +10,7 @@ export const SignInModal = (props) => {
 
     return (
         <>
-            <Button variant="info" className="btn btn-outline-dark mx-2 text-white" onClick={handleShow}>
+            <Button variant="warning" className="btn btn-outline-dark mx-2 text-white" onClick={handleShow}>
                 Sign In
             </Button>
 
@@ -25,7 +25,7 @@ export const SignInModal = (props) => {
                     <Button variant="secondary" onClick={handleClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={handleClose}>
+                    <Button variant="secondary" onClick={handleClose}>
                         Save Changes
                     </Button>
                 </Modal.Footer>

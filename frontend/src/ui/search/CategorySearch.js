@@ -19,6 +19,7 @@ export const CategorySearch = (props) => {
     console.log(scholarshipCategory)
     return (
         <>
+            <h2 className="text-center text-light">{match.params.categoryName} Scholarships</h2>
             <Container fluid>
                 {scholarshipCategory.map(scholarship => <SearchCard key ={scholarship.scholarshipId} scholarship = {scholarship} match = {match}/>)}
             </Container>

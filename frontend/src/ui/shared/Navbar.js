@@ -50,7 +50,7 @@ export function Navigation (props) {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="justify-content-end">
-                            <NavDropdown title="Scholarships" id="collapsible-nav-dropdown">
+                            <NavDropdown className="navbar-brand active" title="Scholarships" id="collapsible-nav-dropdown">
                                 {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
                                     <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
                             </NavDropdown>
@@ -60,9 +60,7 @@ export function Navigation (props) {
                                 {auth ? (
                                     <>
                                 <span className="mx-5">
-                                <h2>Welcome,
-                                    {auth?.userName ?? ''}
-                                    </h2>
+                                <h2>Welcome, {auth?.userName ?? ''}</h2>
                                     </span>
                                         <Navbar.Brand href="/userhome">My Likes</Navbar.Brand>
                                         <SignOut />

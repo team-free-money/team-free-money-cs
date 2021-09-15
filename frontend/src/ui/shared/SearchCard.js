@@ -42,7 +42,7 @@ const dispatch = useDispatch()
     return(
         <>
             <Card>
-                <Card.Header className="text-center Header"><h2>New Mexico Scholarship Finder</h2></Card.Header>
+                <Card.Header className="text-center Header"></Card.Header>
 
                         <Card.Body>
                             <Card.Title className="Name">{scholarship.scholarshipName}</Card.Title>

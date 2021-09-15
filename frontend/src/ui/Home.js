@@ -1,7 +1,6 @@
 import React from "react"
 import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
-import IMG1 from "../images/Aboutus.png"
-import IMG2 from "./mission.png"
+import IMG3 from "../images/team.png"
 import "./style.css"
 import {Search} from "./search/Search";
 import {SearchCard} from "./shared/SearchCard";
@@ -16,8 +15,7 @@ export const Home = () => {
 
                 <Row className="g-5">
                     <Col xs={10} md={6} className="d-block mx-auto bg-white p-5 bg-transparent">
-                        <Image height={275} width={275} src={IMG1} fluid className="mx-auto d-block mb-5" alt="About Us"/>
-
+                        <Image height={350} width={350} src={IMG3} fluid className="mx-auto d-block mb-5" alt="puzzle"/>
                     </Col>
                     <Col xs={10} md={6} className="my-auto my-auto fst-italic font-italic">
                         <h2 className="text-center">About Us</h2>

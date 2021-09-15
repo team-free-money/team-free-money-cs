@@ -3,8 +3,10 @@ import {Button, Card, Col, Container, Image, Row} from "react-bootstrap";
 import IMG1 from "../images/Aboutus.png"
 import IMG2 from "./mission.png"
 import "./style.css"
-import {UserHome} from "./UpdateUser/UserHome";
-import auth from "../store/auth";
+import {Search} from "./search/Search";
+import {SearchCard} from "./shared/SearchCard";
+import scholarships from "../store/scholarships";
+
 export const Home = () => {
     return (
         <>
@@ -22,23 +24,15 @@ export const Home = () => {
                         <h3 className="text-center">
                             We are Full stack Web Developer Intern at Deep Dive Coding. We build this website as our capstone project.
                         </h3>
+                        <h3 className="text-center">Our goal is to provide a starting point encouraging first steps for people in the community to seek out access for education, opening opportunities for improved quality of life.</h3>
                     </Col>
                 </Row>
             </Container>
-                        <Container as={"section"} className='p-1' id="Mission">
-                            <Row className={"g-0"}>
-                                <Col xs={10} md={6} className="d-block mx-auto bg-white p-5 bg-transparent">
-                                    <Image height={500} width={500} src={IMG2} fluid className="mx-2 d-block" alt="Mission"/>
-                                </Col>
-                                <Col xs={10} md={6} className="my-auto fst-italic font-italic">
-                                    <h3 className="text-center">
-                                        Our goal is to provide a starting point encouraging first steps for people in the community to seek out access for education,
-                                        opening opportunities for improved quality of life.
-                                    </h3>
-                                </Col>
-                            </Row>
 
-                        </Container>
+            <Container>
+                <h1 className="text-center text-light">Top 5 Scholarships</h1>
+                <Search />
+            </Container>
         </>
     )
 }

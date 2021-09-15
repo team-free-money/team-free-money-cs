@@ -22,6 +22,7 @@ export const UserHome = () => {
     React.useEffect(sideEffects, [dispatch])
     return(
         <>
+            <h2 className="text-center">Your Liked Scholarships</h2>
             <Container>
                 <Row>
                     <Col>

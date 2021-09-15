@@ -6,7 +6,7 @@ import {RowDataPacket} from "mysql2";
 export async function selectAllScholarships(): Promise<Scholarship|null> {
     try {
         const mySqlConnection = await connect();
-        const mySqlQuery : string = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName, (SELECT COUNT(likeScholarshipId) FROM `like` WHERE scholarship.scholarshipId = `like`.likeScholarshipId) AS likeCount from scholarship"
+        const mySqlQuery : string = "SELECT BIN_TO_UUID(scholarshipId) as scholarshipId, scholarshipAmount, scholarshipCriteria, scholarshipDeadline, scholarshipDescription, scholarshipLink, scholarshipName, (SELECT COUNT(likeScholarshipId) FROM `like` WHERE scholarship.scholarshipId = `like`.likeScholarshipId) AS likeCount from scholarship ORDER BY likeCount DESC LIMIT 5"
         const result = await mySqlConnection.execute(mySqlQuery)as RowDataPacket[]
         // @ts-ignore
         return result[0] as Scholarship[]

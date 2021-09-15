@@ -5,12 +5,12 @@ import {SignInForm} from "./SignInForm";
 
 
 export const SignInModal = (props) => {
-    const {handleShow, handleClose, show} = props
+    const {handleShow, handleClose,show} = props
 
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="info" className="btn btn-outline-dark mx-2 text-white" onClick={handleShow}>
                 Sign In
             </Button>
 

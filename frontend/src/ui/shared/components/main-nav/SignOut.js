@@ -22,7 +22,7 @@ export const SignOut = () => {
     return(
         <>
             <div>
-                <Button variant="primary" className="btn btn-outline-dark mx-2"  onClick={signOut}>
+                <Button variant="info" className="btn btn-outline-dark mx-2"  onClick={signOut}>
                     Sign Out
                 </Button>
             </div>

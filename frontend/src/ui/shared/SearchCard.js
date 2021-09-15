@@ -61,7 +61,7 @@ const dispatch = useDispatch()
                     </Col>
                     <Col>
                         <Button onClick = {clickLike} variant="info" style={{marginLeft: "auto", display:"block"}}>
-                            <Badge bg="secondary">{scholarship.likeCount}</Badge>Save
+                            <Badge bg="secondary">{scholarship.likeCount}</Badge>Like
                         </Button>
                     </Col>
                 </Row>

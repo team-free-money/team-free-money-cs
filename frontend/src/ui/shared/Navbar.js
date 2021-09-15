@@ -44,7 +44,6 @@ export function Navigation (props) {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark">
-                <Container>
                     <img src={logo} className="m-3 rounded-circle text-dark" alt="" width={120}/>
                     <Navbar.Brand href="/">NMSF</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -69,7 +68,6 @@ export function Navigation (props) {
                         {/*    </Form>*/}
 
                     </Navbar.Collapse>
-                </Container>
                 <Nav>
                     {auth ? (
                         <>

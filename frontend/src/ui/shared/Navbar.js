@@ -45,12 +45,12 @@ export function Navigation (props) {
             <Navbar collapseOnSelect expand="lg" variant="dark">
                 <Container>
                     <img src={logo} className="m-3 rounded-circle text-dark" alt=""/>
-                    <Navbar.Brand href="#home">Home</Navbar.Brand>
+                    <Navbar.Brand href="/">NMSF</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#About">About Us</Nav.Link>
-                            <Nav.Link href="#Mission">Our Mission</Nav.Link>
+                            {/*<Nav.Link href="#About">About Us</Nav.Link>*/}
+                            {/*<Nav.Link href="#Mission">Our Mission</Nav.Link>*/}
                             <NavDropdown title="Scholarship" id="collapsible-nav-dropdown">
                                 {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
                                     <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
@@ -60,20 +60,23 @@ export function Navigation (props) {
                 </Container>
                 <Container className="justify-content-end">
                     <Nav>
-                        <Form className="d-flex">
-                            <FormControl
-                                type="search"
-                                placeholder="Search..."
-                                className="mr-2"
-                                aria-label="Search"
-                            />
-                            <Button variant="outline-success">Search</Button>
-                        </Form>
+                    {/*    <Form className="d-flex">*/}
+                    {/*        <FormControl*/}
+                    {/*            type="search"*/}
+                    {/*            placeholder="Search..."*/}
+                    {/*            className="mr-2"*/}
+                    {/*            aria-label="Search"*/}
+                    {/*        />*/}
+                    {/*        <Button variant="outline-success">Search</Button>*/}
+                    {/*    </Form>*/}
 
                         {auth ? (
                             <>
+                               <h2> <span class="Welcome mx-5">
                                 Welcome,{'\u00A0'}
+
                                 {auth?.userName ?? ''}
+                                    </span></h2>
                                 <Navbar.Brand href="/userhome">UserHome</Navbar.Brand>
                                 <SignOut />
                             </>

@@ -19,7 +19,7 @@ export const Home = () => {
                     <Col xs={10} md={7} className="mx-auto my-5 fst-italic font-italic">
                         <h2 className="text-center">About Us</h2>
                         <h5 className="text-center">
-                            We are Full stack Web Developer Intern at Deep Dive Coding. We build this website as our capstone project.
+                            We are Full stack Web Developers at Deep Dive Coding. We built this website as our capstone project.
                         </h5>
                         <h5 className="text-center">Our goal is to provide a starting point encouraging first steps for people in the community to seek out access for education, opening opportunities for improved quality of life.</h5>
                     </Col>

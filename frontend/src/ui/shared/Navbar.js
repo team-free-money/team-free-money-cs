@@ -51,7 +51,7 @@ export function Navigation (props) {
                         <Nav className="me-auto">
                             {/*<Nav.Link href="#About">About Us</Nav.Link>*/}
                             {/*<Nav.Link href="#Mission">Our Mission</Nav.Link>*/}
-                            <NavDropdown className="navbar-brand active" title="Scholarship" id="collapsible-nav-dropdown">
+                            <NavDropdown className="navbar-brand active" title="Scholarships" id="collapsible-nav-dropdown">
                                 {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
                                     <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
                             </NavDropdown>

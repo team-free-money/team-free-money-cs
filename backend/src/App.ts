@@ -1,5 +1,6 @@
 import express, { Application } from 'express'
 import morgan from 'morgan'
+import helmet from "helmet";
 // Routes
 import { indexRoute } from './apis/index.route'
 import {scholarshipRoute} from "./apis/scholarship/scholarship.route";
@@ -46,6 +47,7 @@ export class App {
       maxAge: "3h"
     };
     this.app.use(morgan('dev'))
+    this.app.use(helmet())
     this.app.use(express.json())
     this.app.use(session(sessionConfig));
     this.app.use(passport.initialize());

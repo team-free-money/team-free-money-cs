@@ -13,8 +13,7 @@ import {CreateAccount} from "./Create-Account";
 import {UserLogin} from "./UserLogin";
 import {Footer} from "./shared/Footer";
 import {Search} from "./search/Search";
-import {TopScholarship} from './Top-Scholarship'
-
+import {TopScholarship} from './Top-Scholarship';
 import {Provider} from "react-redux";
 import {CategorySearch} from "./search/CategorySearch";
 

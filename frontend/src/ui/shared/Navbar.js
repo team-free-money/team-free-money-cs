@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 import {Button, Container, Form, FormControl, Nav, Navbar, NavDropdown} from "react-bootstrap";
-import logo from "../../images/logoteam.png"
+import logo from "../../images/logoteamtransparent.png"
+
 import {useDispatch, useSelector} from "react-redux";
 import {fetchAllCategories} from "../../store/category";
 import {Link} from "react-router-dom";
@@ -43,84 +44,49 @@ export function Navigation (props) {
     return (
         <>
             <Navbar collapseOnSelect expand="lg" variant="dark">
-                <Container>
-                    <img src={logo} className="m-3 rounded-circle text-dark" alt=""/>
-                    <Navbar.Brand href="/">NMSF</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                    <Navbar.Collapse id="responsive-navbar-nav">
-                        <Nav className="me-auto">
-                            {/*<Nav.Link href="#About">About Us</Nav.Link>*/}
-                            {/*<Nav.Link href="#Mission">Our Mission</Nav.Link>*/}
-                            <NavDropdown title="Scholarship" id="collapsible-nav-dropdown">
-                                {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
-                                    <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
-                            </NavDropdown>
-                        </Nav>
-
-                            {/*    <Form className="d-flex">*/}
-                            {/*        <FormControl*/}
-                            {/*            type="search"*/}
-                            {/*            placeholder="Search..."*/}
-                            {/*            className="mr-2"*/}
-                            {/*            aria-label="Search"*/}
-                            {/*        />*/}
-                            {/*        <Button variant="outline-success">Search</Button>*/}
-                            {/*    </Form>*/}
-
-                    </Navbar.Collapse>
-                </Container>
-                <Nav>
-                {auth ? (
-                    <>
-                        <Navbar.Text>
-                            Signed in as: <a href={auth?.userName ?? ''}></a>
-                        </Navbar.Text>
-                        <NavDropdown title ={auth?.userName ?? ''} id = 'basic-nav-dropdown'>
-                            <NavDropdown.Item href = '/userhome'>My Likes</NavDropdown.Item>
+                <img src={logo} className="m-3 rounded-circle text-dark" alt="" width={120}/>
+                <Navbar.Brand href="/">NMSF</Navbar.Brand>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Collapse id="responsive-navbar-nav">
+                    <Nav className="me-auto">
+                        {/*<Nav.Link href="#About">About Us</Nav.Link>*/}
+                        {/*<Nav.Link href="#Mission">Our Mission</Nav.Link>*/}
+                        <NavDropdown className="navbar-brand active" title="Scholarships" id="collapsible-nav-dropdown">
+                            {categories.map(category => <Link key={category.categoryId} exact = "true" to={`/category/${category.categoryName}`}>
+                                <NavDropdown.Item as = "div">{category.categoryName}</NavDropdown.Item></Link>)}
                         </NavDropdown>
-                        <SignOut />
-                    </>
-                ) : (
-                    isModalOpen() && (
+                    </Nav>
+
+                    {/*    <Form className="d-flex">*/}
+                    {/*        <FormControl*/}
+                    {/*            type="search"*/}
+                    {/*            placeholder="Search..."*/}
+                    {/*            className="mr-2"*/}
+                    {/*            aria-label="Search"*/}
+                    {/*        />*/}
+                    {/*        <Button variant="outline-success">Search</Button>*/}
+                    {/*    </Form>*/}
+
+                </Navbar.Collapse>
+                <Nav>
+                    {auth ? (
                         <>
-                            <SignUpModal />
-                            <SignInModal show = {show} handleClose = {handleClose} handleShow = {handleShow} />
+                            <Navbar.Text>
+                                <h5 className="text-info">Signed in as: <a href={auth?.userName ?? ''}></a></h5>
+                            </Navbar.Text>
+                            <NavDropdown title={auth?.userName ?? ''} id = 'basic-nav-dropdown'>
+                                <NavDropdown.Item href = '/userhome'>My Likes</NavDropdown.Item>
+                            </NavDropdown>
+                            <SignOut />
                         </>
-                    ))}
-            </Nav>
-                {/*<Container className="justify-content-end">*/}
-                {/*    <Nav>*/}
-                {/*        /!*    <Form className="d-flex">*!/*/}
-                {/*        /!*        <FormControl*!/*/}
-                {/*        /!*            type="search"*!/*/}
-                {/*        /!*            placeholder="Search..."*!/*/}
-                {/*        /!*            className="mr-2"*!/*/}
-                {/*        /!*            aria-label="Search"*!/*/}
-                {/*        /!*        />*!/*/}
-                {/*        /!*        <Button variant="outline-success">Search</Button>*!/*/}
-                {/*        /!*    </Form>*!/*/}
-
-                    {/*    {auth ? (*/}
-                    {/*        <>*/}
-                    {/*            <h2> <span class="Welcome mx-5">*/}
-                    {/*            Welcome,{'\u00A0'}*/}
-
-                    {/*                {auth?.userName ?? ''}*/}
-                    {/*                </span></h2>*/}
-                    {/*            <Navbar.Brand href="/userhome">UserHome</Navbar.Brand>*/}
-                    {/*            <SignOut />*/}
-                    {/*        </>*/}
-                    {/*    ) : (*/}
-                    {/*        isModalOpen() && (*/}
-                    {/*            <>*/}
-                    {/*                <SignUpModal/>*/}
-                    {/*                {'\u00A0'}*/}
-
-                    {/*                <SignInModal show={show} handleClose={handleClose} handleShow={handleShow}/>*/}
-                    {/*            </>*/}
-                    {/*        ))}*/}
-                    {/*</Nav>*/}
-                {/*</Container>*/}
+                    ) : (
+                        isModalOpen() && (
+                            <>
+                                <SignUpModal />
+                                <SignInModal show = {show} handleClose = {handleClose} handleShow = {handleShow} />
+                            </>
+                        ))}
+                </Nav>
             </Navbar>
         </>
     );
